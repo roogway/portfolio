@@ -9,269 +9,177 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="project-page">
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav nav-dark">
         <a href="index.html" class="nav-logo">R</a>
         <div class="nav-links">
             <a href="index.html" class="nav-link">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="#" class="nav-link">Resume</a>
             <a href="https://www.linkedin.com/in/raghvikabra" class="nav-link" target="_blank">LinkedIn</a>
             <a href="mailto:kabra.raghvi@gmail.com" class="nav-cta">Get in Touch</a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
-    <!-- Case Study Hero -->
-    <section class="case-hero">
-        <a href="index.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Work
-        </a>
-
-        <div class="case-hero-content">
-            <div class="case-hero-text">
-                <div class="project-tags" style="margin-bottom: 1rem;">
-                    <span class="tag tag-primary">Featured</span>
-                    <span class="tag">Adobe</span>
-                    <span class="tag">0→1</span>
-                    <span class="tag">Kids Product</span>
-                </div>
-                <h1 class="case-title">Project Aqua</h1>
-                <p class="case-subtitle">Adobe's first kids creative product. As Founding Designer, I established core UX architecture, built the design system, and enabled rapid team velocity from concept through launch.</p>
-                <a href="#" class="btn btn-primary" style="margin-top: 1.5rem;">View Full Case Study PDF</a>
+    <!-- 1. HERO -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-left">
+                <h1 class="project-title">Project Aqua</h1>
             </div>
-            <div class="case-hero-image" style="background: var(--aqua-gradient); min-height: 400px; display: flex; align-items: center; justify-content: center;">
-                <div style="text-align: center; color: var(--aqua-primary);">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🏝️</div>
-                    <p style="font-weight: 500;">Project Aqua Preview</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats-row" style="margin: 0 var(--space-lg);">
-        <div class="stat-item">
-            <div class="stat-value">Founding</div>
-            <div class="stat-label">Designer</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">2024</div>
-            <div class="stat-label">Launch Year</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">4.9★</div>
-            <div class="stat-label">App Store Rating</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">150k+</div>
-            <div class="stat-label">Creations</div>
-        </div>
-    </section>
-
-    <!-- The Challenge -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>The Challenge</h2>
-            <p>Design Adobe's first product specifically for children—a creative experience that builds confidence, sparks joy, and introduces young users to the Adobe ecosystem. The product needed to balance Adobe's brand standards with kid-friendly aesthetics while meeting strict COPPA compliance requirements.</p>
-        </div>
-        <div class="case-images grid-2">
-            <div class="case-image" style="background: var(--aqua-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Challenge Visual 1</span>
-            </div>
-            <div class="case-image" style="background: var(--aqua-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Challenge Visual 2</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- My Role -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>My Role & Impact</h2>
-            <p>As the sole designer on the Emerging Products team, I owned the end-to-end design process—from early research and concept exploration through launch and iteration. I partnered directly with engineering, product, and leadership to shape the product vision and execution.</p>
-        </div>
-        <div class="value-props" style="padding: 0; margin-top: var(--space-lg);">
-            <div class="value-card">
-                <h3>UX Architecture</h3>
-                <p>Designed the foundational navigation and interaction patterns that became the product's core framework.</p>
-            </div>
-            <div class="value-card">
-                <h3>Design System</h3>
-                <p>Built a comprehensive component library balancing Adobe's brand with kid-friendly, accessible design.</p>
-            </div>
-            <div class="value-card">
-                <h3>Team Enablement</h3>
-                <p>Created systems and documentation that enabled rapid development velocity across the team.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Insight -->
-    <section class="case-section">
-        <div class="highlight-block">
-            <div class="highlight-value">2,000+</div>
-            <div class="highlight-text">Beta users during development, providing critical feedback that shaped the final product experience through iterative testing.</div>
-        </div>
-    </section>
-
-    <!-- UX Architecture -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Island-Based Navigation</h2>
-            <p>I designed a hybrid navigation system using an "island" metaphor that made exploration feel natural and delightful for kids. Each island—Coloring Coast, Fashion Island, Capture Cove, Paper Pass, and Bloop & Blob Bay—represents a different creative activity, creating a sense of discovery and progression.</p>
-        </div>
-        <div class="case-images">
-            <div class="case-image full" style="background: var(--aqua-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Island Navigation System Overview</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Design System -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Design System</h2>
-            <p>Built a comprehensive design system from scratch that balanced Adobe's brand standards with kid-friendly aesthetics—playful without being patronizing, colorful while maintaining accessibility across all components.</p>
-        </div>
-        <div class="case-images grid-3">
-            <div class="case-image" style="background: var(--aqua-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Colors</span>
-            </div>
-            <div class="case-image" style="background: var(--aqua-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Typography</span>
-            </div>
-            <div class="case-image" style="background: var(--aqua-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Components</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Speaking -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Adobe Design Summit</h2>
-            <p>Presented "From Pixels to Playground" at Adobe Design Summit 2025, sharing our design process, key learnings, and the unique challenges of designing creative tools for children.</p>
-        </div>
-        <div class="case-images">
-            <div class="case-image full" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); display: flex; align-items: center; justify-content: center;">
-                <span style="color: rgba(255,255,255,0.5);">Adobe Design Summit Presentation</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Results & Impact</h2>
-            <p>Project Aqua launched successfully, establishing Adobe's first foothold in the kids creative market and validating our design approach through strong user metrics.</p>
-        </div>
-        <div class="stats-row" style="margin: 0;">
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">4.9★</div>
-                <div class="stat-label">App Store Rating</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">150k+</div>
-                <div class="stat-label">Creations Made</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">High</div>
-                <div class="stat-label">Team Velocity</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">First</div>
-                <div class="stat-label">Adobe Kids Product</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Learnings -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Key Learnings</h2>
-        </div>
-        <div class="value-props" style="padding: 0;">
-            <div class="value-card">
-                <h3>Design for Discovery</h3>
-                <p>Kids learn through exploration, not instruction. Every interaction should invite curiosity and reward experimentation.</p>
-            </div>
-            <div class="value-card">
-                <h3>Safety by Design</h3>
-                <p>COPPA compliance isn't just a checklist—it's a design philosophy that shapes every decision from data to UI.</p>
-            </div>
-            <div class="value-card">
-                <h3>Systems Enable Speed</h3>
-                <p>Investing in a robust design system early paid dividends in team velocity and consistency at scale.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- More Work -->
-    <section class="case-section">
-        <div class="section-header">
-            <h2>More Work</h2>
-        </div>
-        <div class="work-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <a href="gween-toys.html" class="project-card">
-                <div class="project-image gween-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="gween-preview">
-                                <div class="gween-toy">🌿</div>
-                            </div>
-                        </div>
+            <div class="project-hero-right">
+                <p class="project-tagline">Adobe's first kids creative product. A playful universe where children explore creativity through interactive islands, games, and AI-powered tools.</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Founding Designer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Company</span>
+                        <span class="meta-value">Adobe</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2024</span>
                     </div>
                 </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag">Product Lead</span>
-                        <span class="tag">Toy Design</span>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. HERO IMAGE -->
+    <section class="project-hero-image">
+        <!-- Replace with actual hero image -->
+        <div style="background: var(--aqua-gradient); height: 500px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: var(--aqua-primary); font-size: 1.25rem;">Hero Image Placeholder</span>
+        </div>
+    </section>
+
+    <!-- 3. STATS BAR -->
+    <section class="project-stats">
+        <div class="stat">
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">App Store Rating</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">150k+</span>
+            <span class="stat-label">Creations</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">First</span>
+            <span class="stat-label">Kids Product at Adobe</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">2024</span>
+            <span class="stat-label">Launch</span>
+        </div>
+    </section>
+
+    <!-- 4. KEY DECISIONS -->
+    <section class="project-decisions">
+        <h2 class="decisions-title">Key Decisions</h2>
+        <ul class="decisions-list">
+            <li>Designed island-based navigation that made exploration intuitive for kids while meeting strict COPPA compliance requirements</li>
+            <li>Built comprehensive design system from scratch, enabling 2x team velocity and consistent experience across platforms</li>
+            <li>Established UX architecture patterns that became the foundation for Adobe's kids product ecosystem</li>
+        </ul>
+    </section>
+
+    <!-- 5. IMAGE GALLERY -->
+    <section class="project-gallery">
+        <!-- Full width -->
+        <div class="gallery-row full">
+            <div style="background: var(--aqua-secondary); height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted);">Gallery Image 1 - Full Width</span>
+            </div>
+        </div>
+
+        <!-- Two column -->
+        <div class="gallery-row two-col">
+            <div style="background: var(--aqua-secondary); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted);">Gallery Image 2</span>
+            </div>
+            <div style="background: var(--aqua-secondary); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted);">Gallery Image 3</span>
+            </div>
+        </div>
+
+        <!-- Full width -->
+        <div class="gallery-row full">
+            <div style="background: var(--aqua-secondary); height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted);">Gallery Image 4 - Full Width</span>
+            </div>
+        </div>
+
+        <!-- Two column -->
+        <div class="gallery-row two-col">
+            <div style="background: var(--aqua-secondary); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted);">Gallery Image 5</span>
+            </div>
+            <div style="background: var(--aqua-secondary); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted);">Gallery Image 6</span>
+            </div>
+        </div>
+
+        <!-- Full width -->
+        <div class="gallery-row full">
+            <div style="background: var(--aqua-secondary); height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted);">Gallery Image 7 - Full Width</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. LINKS / CTA -->
+    <section class="project-links">
+        <div class="links-content">
+            <h3 class="links-title">Explore</h3>
+            <div class="links-grid">
+                <a href="#" class="link-card" target="_blank">
+                    <span class="link-icon">📱</span>
+                    <span class="link-text">Download on App Store</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <span class="link-icon">🎤</span>
+                    <span class="link-text">Adobe Design Summit Talk</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <span class="link-icon">🐦</span>
+                    <span class="link-text">Launch Announcement</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <span class="link-icon">📝</span>
+                    <span class="link-text">Press Coverage</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MORE WORK -->
+    <section class="more-work">
+        <h2 class="more-work-title">More Work</h2>
+        <div class="more-work-grid">
+            <a href="gween-toys.html" class="work-card">
+                <div class="work-card-image gween-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 3rem;">🌿</span>
+                </div>
+                <div class="work-card-info">
                     <h3>Gween Toys</h3>
-                    <p class="project-stat">▲ Scaled from 5 to 30 toys</p>
-                    <span class="project-link">View Case Study →</span>
+                    <p>Product Lead · Toy Design</p>
                 </div>
             </a>
-            <a href="adobe-express.html" class="project-card">
-                <div class="project-image express-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="express-preview">
-                                <div class="express-icon">Aa</div>
-                            </div>
-                        </div>
-                    </div>
+            <a href="adobe-express.html" class="work-card">
+                <div class="work-card-image express-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 2rem; font-weight: 700; color: var(--express-primary);">Aa</span>
                 </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag">Adobe</span>
-                        <span class="tag">Global Scale</span>
-                    </div>
+                <div class="work-card-info">
                     <h3>Adobe Express</h3>
-                    <p class="project-stat">▲ Translate & Card Maker</p>
-                    <span class="project-link">View Case Study →</span>
+                    <p>Translate & Card Maker</p>
                 </div>
             </a>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Let's create something <em>delightful</em></h2>
-            <p>Open to full-time opportunities and select freelance projects.</p>
-            <div class="cta-buttons">
-                <a href="mailto:kabra.raghvi@gmail.com" class="btn btn-primary">Get in Touch</a>
-                <a href="#" class="btn btn-secondary">Download Resume</a>
-            </div>
         </div>
     </section>
 
@@ -287,19 +195,16 @@
                     <h5>Portfolio</h5>
                     <a href="index.html">Work</a>
                     <a href="about.html">About</a>
-                    <a href="project-aqua.html">Project Aqua</a>
-                    <a href="gween-toys.html">Gween Toys</a>
                 </div>
                 <div class="footer-col">
                     <h5>Connect</h5>
                     <a href="https://www.linkedin.com/in/raghvikabra" target="_blank">LinkedIn</a>
-                    <a href="https://roogway.substack.com" target="_blank">Roogway Writes</a>
                     <a href="mailto:kabra.raghvi@gmail.com">Email</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Raghvi Kabra. Made with care in San Francisco.</p>
+            <p>© 2025 Raghvi Kabra</p>
         </div>
     </footer>
 
