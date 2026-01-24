@@ -8,7 +8,7 @@
     /* Colors */
     --color-bg: #FAFAFA;
     --color-bg-card: #FFFFFF;
-    --color-bg-dark: #0F0F0F;
+    --color-bg-dark: #1A1A1A;
     --color-text: #1A1A1A;
     --color-text-secondary: #6B6B6B;
     --color-text-muted: #9B9B9B;
@@ -1234,8 +1234,7 @@ img {
 /* 1. Project Hero */
 .project-hero {
     background: var(--color-bg-dark);
-    padding: calc(var(--nav-height) + var(--space-2xl)) var(--space-lg) var(--space-2xl);
-    min-height: 60vh;
+    padding: calc(var(--nav-height) + var(--space-xl)) var(--space-lg) var(--space-xl);
     display: flex;
     align-items: flex-end;
 }
@@ -1416,7 +1415,7 @@ img {
 
 /* 6. Links / CTA Section */
 .project-links {
-    background: var(--color-bg-dark);
+    background: #2A2A2A;
     padding: var(--space-2xl) var(--space-lg);
 }
 
