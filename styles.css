@@ -1260,7 +1260,7 @@ img {
     font-size: 1.125rem;
     color: var(--color-text-secondary);
     line-height: 1.6;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
 .project-meta {
@@ -1311,15 +1311,17 @@ img {
     border-radius: var(--radius-xl);
 }
 
-/* 3. Stats Bar */
+/* 3. Stats Bar - Card Style */
 .project-stats {
     max-width: var(--max-width);
-    margin: 0 auto;
-    padding: var(--space-xl) var(--space-lg);
+    margin: var(--space-xl) auto;
+    padding: var(--space-xl) var(--space-2xl);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
-    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
 }
 
 .stat {
