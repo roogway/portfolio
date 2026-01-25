@@ -964,22 +964,6 @@ img {
         transform: translateX(-50%);
     }
 }
-/* Universal shrink + alignment fix for *all* visual rows */
-.gallery-row,
-.gallery-item,
-.gallery-row img,
-.gallery-item img {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Make images scale but keep layouts intact */
-.gallery-row img,
-.gallery-item img {
-    width: 100%;
-    display: block;
-}
 /* =====================================================
    RESPONSIVE
    ===================================================== */
@@ -1613,4 +1597,23 @@ img {
         flex-wrap: wrap;
         gap: var(--space-md);
     }
+}
+/* ================================================
+   AQUA — Image Section Alignment + Width Control
+   ================================================ */
+
+.case-section .case-images,
+.case-section .case-images .case-image,
+.case-section .case-section-header,
+.case-section p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-section .case-image img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
 }
