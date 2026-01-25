@@ -1617,3 +1617,71 @@ img {
     margin: 0 auto;
     border-radius: var(--radius-lg);
 }
+/* ------------------------------------------
+   EXPLORE SECTION — Option B (Gradient Dot)
+------------------------------------------- */
+
+.explore-links {
+    max-width: 900px;
+    margin: var(--space-2xl) auto;
+    padding: 0 var(--space-lg);
+}
+
+.explore-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.explore-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all var(--transition-base);
+}
+
+.explore-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.explore-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #A0CFFF, #7B4DFF);
+    flex-shrink: 0;
+}
+
+.explore-text h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.explore-text p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.explore-arrow {
+    margin-left: auto;
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-fast);
+}
+
+.explore-item:hover .explore-arrow {
+    transform: translateX(4px);
+    color: var(--color-text);
+}
+
