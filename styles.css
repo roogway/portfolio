@@ -1413,6 +1413,25 @@ img {
     background: var(--color-bg);
 }
 
+.gallery-item {
+    margin: 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    display: block;
+    background: var(--color-bg);
+}
+
+.gallery-item figcaption {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+    text-align: center;
+}
+
 /* 6. Links / CTA Section - Light Background */
 .project-links {
     background: #F5F5F5;
