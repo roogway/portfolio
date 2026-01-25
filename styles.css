@@ -964,21 +964,21 @@ img {
         transform: translateX(-50%);
     }
 }
-/* Universal shrink + alignment fix for *all* visual rows */
+/* Center all image blocks properly */
+.case-images,
+.case-image,
 .gallery-row,
-.gallery-item,
-.gallery-row img,
-.gallery-item img {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+.gallery-item {
+    display: flex;
+    justify-content: center;
 }
 
-/* Make images scale but keep layouts intact */
+/* Scale images safely */
+.case-image img,
 .gallery-row img,
 .gallery-item img {
-    width: 100%;
-    display: block;
+    width: 85%;
+    max-width: 900px;
 }
 /* =====================================================
    RESPONSIVE
