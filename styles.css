@@ -964,25 +964,21 @@ img {
         transform: translateX(-50%);
     }
 }
-/* TEMP — Hard-wrap image sections + their text to the same width */
-.case-section,
-.case-images,
+/* Universal shrink + alignment fix for *all* visual rows */
 .gallery-row,
-.case-section-header,
-.case-section p {
-    max-width: 900px;   /* match your desired image width */
+.gallery-item,
+.gallery-row img,
+.gallery-item img {
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Image scaling */
-.case-image img,
+/* Make images scale but keep layouts intact */
 .gallery-row img,
 .gallery-item img {
-    width: 100%;        /* fill the new 900px container */
-    max-width: 900px;
+    width: 100%;
     display: block;
-    margin: 0 auto;
 }
 /* =====================================================
    RESPONSIVE
