@@ -964,19 +964,23 @@ img {
         transform: translateX(-50%);
     }
 }
-/* =====================================================
-   TEMP — IMAGE SIZE TUNING (Clean + Non-breaking)
-   ===================================================== */
+/* TEMP — Fix text overflow caused by image scaling */
+.case-section,
+.case-section-header,
+.case-section p {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/* 1. Scale down the images without breaking grid alignment */
+/* Scale images but DO NOT affect their parent grid */
 .case-image img,
 .gallery-row img,
 .gallery-item img {
     width: 85%;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
     display: block;
+    margin: 0 auto;
 }
 /* =====================================================
    RESPONSIVE
