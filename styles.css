@@ -964,20 +964,22 @@ img {
         transform: translateX(-50%);
     }
 }
-/* TEMP — Fix text overflow caused by image scaling */
+/* TEMP — Hard-wrap image sections + their text to the same width */
 .case-section,
+.case-images,
+.gallery-row,
 .case-section-header,
 .case-section p {
-    max-width: var(--max-width);
+    max-width: 900px;   /* match your desired image width */
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Scale images but DO NOT affect their parent grid */
+/* Image scaling */
 .case-image img,
 .gallery-row img,
 .gallery-item img {
-    width: 85%;
+    width: 100%;        /* fill the new 900px container */
     max-width: 900px;
     display: block;
     margin: 0 auto;
