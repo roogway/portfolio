@@ -965,24 +965,19 @@ img {
     }
 }
 /* =====================================================
-   TEMP — IMAGE SIZE TUNING (Centered + Smaller)
+   TEMP — IMAGE SIZE TUNING (Clean + Non-breaking)
    ===================================================== */
 
-/* 1. Make the image container centered */
-.case-image,
-.gallery-item {
-    display: flex;
-    justify-content: center;
-}
-
-/* 2. Scale down the image itself */
+/* 1. Scale down the images without breaking grid alignment */
 .case-image img,
+.gallery-row img,
 .gallery-item img {
     width: 85%;
     max-width: 900px;
-    border-radius: var(--radius-lg);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
-
 /* =====================================================
    RESPONSIVE
    ===================================================== */
