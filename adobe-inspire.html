@@ -9,118 +9,204 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="project-page">
     <!-- Navigation -->
     <nav class="nav">
         <a href="index.html" class="nav-logo">R</a>
         <div class="nav-links">
             <a href="index.html" class="nav-link">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="#" class="nav-link">Resume</a>
             <a href="https://www.linkedin.com/in/raghvikabra" class="nav-link" target="_blank">LinkedIn</a>
             <a href="mailto:kabra.raghvi@gmail.com" class="nav-cta">Get in Touch</a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
-    <!-- Case Study Hero -->
-    <section class="case-hero">
-        <a href="index.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Work
+    <!-- 1. HERO -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-left">
+                <h1 class="project-title">Adobe Inspire</h1>
+                <p class="project-tagline">3…2…1…Go creative! I designed a mobile app concept to make creativity a daily habit for Indian Gen Z students. Through culturally relevant challenges featuring Indian folk art, simplified drawing tools, and social co-creation features, Adobe Inspire tackles the creativity crisis caused by India's exam-driven education system.</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Experience Design Intern</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Company</span>
+                        <span class="meta-value">Adobe</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2022</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-hero-image-container">
+                <img src="images/inspire-hero.jpg" alt="Adobe Inspire app screens showing daily creative challenges">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. STATS BAR -->
+    <section class="project-stats">
+        <div class="stat">
+            <span class="stat-number">11-15</span>
+            <span class="stat-label">Target Age Group</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">Daily</span>
+            <span class="stat-label">Creative Challenges</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">0→1</span>
+            <span class="stat-label">Concept to Prototype</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">India</span>
+            <span class="stat-label">Market Focus</span>
+        </div>
+    </section>
+
+    <!-- 3. KEY DECISIONS -->
+    <section class="project-decisions">
+        <h2 class="decisions-title">Key Decisions</h2>
+        <div class="decisions-grid">
+            <div class="decision-item">
+                <h3>Daily Challenge Model</h3>
+                <p>India's rote learning system strips creative thinking—parents discourage "non-STEM" pursuits. Rather than a blank canvas, I designed daily prompts featuring Indian folk art like Madhubani paintings to make creativity feel achievable and culturally connected.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Template-First Creation</h3>
+                <p>Blank canvas syndrome kills motivation, especially for kids new to digital art. I leveraged Adobe Express templates and introduced "Quick Actions" like pattern-making and image trace to help kids start creating immediately.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Streak-Based Habits</h3>
+                <p>Creativity needs consistency to become a skill. Borrowing from Duolingo's model, I designed a streak system rewarding daily creation—turning sporadic creativity into an everyday habit that even skeptical parents could support.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Social Co-Creation</h3>
+                <p>Gen Z wants to "stand out and fit in" simultaneously. I added collaborative features letting friends and family create together on the same challenge, making creativity social rather than isolating—and bridging the generation gap.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROTOTYPE WORKFLOW VIDEOS -->
+    <section class="workflow-videos">
+        <h2 class="workflow-title">The Experience</h2>
+
+        <div class="workflow-item">
+            <div class="workflow-video">
+                <video autoplay loop muted playsinline>
+                    <source src="images/inspire-challenge.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="workflow-text">
+                <h3>A daily creative challenge</h3>
+                <p>Users get a creative prompt every day with a showcase of work from their community. Today's challenge: Make a Madhubani-inspired painting of a fish—complete with cultural context and tutorial content.</p>
+            </div>
+        </div>
+
+        <div class="workflow-item workflow-item-reverse">
+            <div class="workflow-video">
+                <video autoplay loop muted playsinline>
+                    <source src="images/inspire-draw.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="workflow-text">
+                <h3>Draw & animate</h3>
+                <p>A simplified Fresco mobile toolbar makes drawing fun. Kids can draw on paper and capture with Adobe Capture, or draw digitally and bring artwork to life with animation templates.</p>
+            </div>
+        </div>
+
+        <div class="workflow-item">
+            <div class="workflow-video">
+                <video autoplay loop muted playsinline>
+                    <source src="images/inspire-streak.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="workflow-text">
+                <h3>Build a habit with streaks</h3>
+                <p>Get rewarded for being creative every single day. The streak system celebrates consistency and keeps the creative spirit alive through gentle motivation.</p>
+            </div>
+        </div>
+
+        <div class="workflow-item workflow-item-reverse">
+            <div class="workflow-video">
+                <video autoplay loop muted playsinline>
+                    <source src="images/inspire-collab.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="workflow-text">
+                <h3>Co-create with friends & family</h3>
+                <p>Invite friends and family to Inspire and do daily challenges together. See each other's interpretations side-by-side, making creativity a shared experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. IMAGE GALLERY -->
+    <section class="project-gallery">
+        <figure class="gallery-item">
+            <img src="images/inspire-screens.jpg" alt="Adobe Inspire app screen collection">
+            <figcaption>Full app flow from daily challenge to creation to streak celebration.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="images/inspire-madhubani.jpg" alt="Madhubani art inspiration and user creations">
+            <figcaption>Culturally relevant prompts featuring Indian folk art traditions like Madhubani paintings from Bihar.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="images/inspire-research.jpg" alt="User research with Indian students">
+            <figcaption>Research insights from Dr. Payal Arora's study on Indian Gen Z creativity for Adobe.</figcaption>
+        </figure>
+    </section>
+
+    <!-- EXPLORE MORE -->
+    <section class="explore-links">
+        <h2 class="explore-title">Explore More</h2>
+
+        <a class="explore-item" href="https://www.adobe.com/express/" target="_blank">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>Adobe Express —</h3>
+                <p>The platform that inspired Inspire's template-based approach.</p>
+            </div>
+            <span class="explore-arrow">→</span>
         </a>
 
-        <div class="case-hero-content">
-            <div class="case-hero-text">
-                <div class="project-tags" style="margin-bottom: 1rem;">
-                    <span class="tag">Adobe</span>
-                    <span class="tag">Internship</span>
-                    <span class="tag">Product Design</span>
-                </div>
-                <h1 class="case-title">Adobe Inspire</h1>
-                <p class="case-subtitle">Product design internship at Adobe that shaped my approach to enterprise creative tools and large-scale design systems.</p>
+        <a class="explore-item" href="project-aqua.html">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>Project Aqua —</h3>
+                <p>Another Adobe project focused on creativity for kids.</p>
             </div>
-            <div class="case-hero-image" style="background: var(--inspire-gradient); min-height: 400px; display: flex; align-items: center; justify-content: center;">
-                <div style="text-align: center; color: var(--inspire-primary);">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">✨</div>
-                    <p style="font-weight: 500;">Coming Soon</p>
-                </div>
-            </div>
-        </div>
+            <span class="explore-arrow">→</span>
+        </a>
     </section>
 
-    <!-- Placeholder Content -->
-    <section class="case-section">
-        <div class="highlight-block">
-            <div class="highlight-value">Case Study Coming Soon</div>
-            <div class="highlight-text">Full details about this internship experience will be added shortly. Check back soon or reach out to learn more about this project.</div>
-        </div>
-    </section>
-
-    <!-- More Work -->
-    <section class="case-section">
-        <div class="section-header">
-            <h2>More Work</h2>
-        </div>
-        <div class="work-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <a href="project-aqua.html" class="project-card">
-                <div class="project-image aqua-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="aqua-preview">
-                                <div class="aqua-island"></div>
-                                <div class="aqua-character"></div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- 6. MORE WORK -->
+    <section class="more-work">
+        <h2 class="more-work-title">More Work</h2>
+        <div class="more-work-grid">
+            <a href="project-aqua.html" class="work-card">
+                <div class="work-card-image aqua-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 3rem;">🎨</span>
                 </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag tag-primary">Featured</span>
-                        <span class="tag">Adobe</span>
-                    </div>
+                <div class="work-card-info">
                     <h3>Project Aqua</h3>
-                    <p class="project-stat">▲ 4.9 App Store rating</p>
-                    <span class="project-link">View Case Study →</span>
+                    <p>Founding Designer · Adobe</p>
                 </div>
             </a>
-            <a href="gween-toys.html" class="project-card">
-                <div class="project-image gween-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="gween-preview">
-                                <div class="gween-toy">🌿</div>
-                            </div>
-                        </div>
-                    </div>
+            <a href="gween-toys.html" class="work-card">
+                <div class="work-card-image gween-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 3rem;">🌿</span>
                 </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag">Product Lead</span>
-                        <span class="tag">Toy Design</span>
-                    </div>
+                <div class="work-card-info">
                     <h3>Gween Toys</h3>
-                    <p class="project-stat">▲ Scaled from 5 to 30 toys</p>
-                    <span class="project-link">View Case Study →</span>
+                    <p>Product Lead & Designer</p>
                 </div>
             </a>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Let's create something <em>delightful</em></h2>
-            <p>Open to full-time opportunities and select freelance projects.</p>
-            <div class="cta-buttons">
-                <a href="mailto:kabra.raghvi@gmail.com" class="btn btn-primary">Get in Touch</a>
-                <a href="#" class="btn btn-secondary">Download Resume</a>
-            </div>
         </div>
     </section>
 
@@ -136,19 +222,16 @@
                     <h5>Portfolio</h5>
                     <a href="index.html">Work</a>
                     <a href="about.html">About</a>
-                    <a href="project-aqua.html">Project Aqua</a>
-                    <a href="gween-toys.html">Gween Toys</a>
                 </div>
                 <div class="footer-col">
                     <h5>Connect</h5>
                     <a href="https://www.linkedin.com/in/raghvikabra" target="_blank">LinkedIn</a>
-                    <a href="https://roogway.substack.com" target="_blank">Roogway Writes</a>
                     <a href="mailto:kabra.raghvi@gmail.com">Email</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Raghvi Kabra. Made with care in San Francisco.</p>
+            <p>© 2025 Raghvi Kabra</p>
         </div>
     </footer>
 
