@@ -9,267 +9,168 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="project-page">
     <!-- Navigation -->
     <nav class="nav">
         <a href="index.html" class="nav-logo">R</a>
         <div class="nav-links">
             <a href="index.html" class="nav-link">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="#" class="nav-link">Resume</a>
             <a href="https://www.linkedin.com/in/raghvikabra" class="nav-link" target="_blank">LinkedIn</a>
             <a href="mailto:kabra.raghvi@gmail.com" class="nav-cta">Get in Touch</a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
-    <!-- Case Study Hero -->
-    <section class="case-hero">
-        <a href="index.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Work
+    <!-- 1. HERO -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-left">
+                <h1 class="project-title">Gween Toys</h1>
+                <p class="project-tagline">High-quality, organic toys crafted from natural materials by traditional artisans. I led the product expansion for this pro-environment toy brand, growing their catalog from 5 to 30 toys while preserving the 300-year-old Channapatna craft tradition from rural Karnataka, India.</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Product Lead & Designer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Company</span>
+                        <span class="meta-value">Gween Toys</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2020</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-hero-image-container">
+                <img src="images/gween-hero.jpg" alt="Gween Toys collection of handcrafted wooden toys">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. STATS BAR -->
+    <section class="project-stats">
+        <div class="stat">
+            <span class="stat-number">5→30</span>
+            <span class="stat-label">Toys Designed</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">2.5</span>
+            <span class="stat-label">Months</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">300yr</span>
+            <span class="stat-label">Old Craft Tradition</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Natural Materials</span>
+        </div>
+    </section>
+
+    <!-- 3. KEY DECISIONS -->
+    <section class="project-decisions">
+        <h2 class="decisions-title">Key Decisions</h2>
+        <div class="decisions-grid">
+            <div class="decision-item">
+                <h3>Artisan-First Documentation</h3>
+                <p>Traditional technical drawings didn't work for artisans in Channapatna. I created visual design specs with color-coded annotations and 3D renders that could be understood without reading, bridging the gap between digital design and traditional craft.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Modular Play Systems</h3>
+                <p>Rather than standalone toys, I designed modular systems like Wobots (mix & match robots) and Dwino (word-forming dinosaur) that encourage creative recombination, extending play value while keeping production simple for artisans.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Preserving Craft Identity</h3>
+                <p>Channapatna toys have a distinct lacquer finish and turned-wood aesthetic. Every new design honored these constraints, using traditional techniques like lac coating while introducing contemporary play patterns.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Developmental Play Focus</h3>
+                <p>Each toy was designed around specific developmental skills: thumb-finger grasp, cause-and-effect understanding, balance, and fine motor control. This gave parents clear reasons to choose handcrafted over plastic.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. IMAGE GALLERY -->
+    <section class="project-gallery">
+        <figure class="gallery-item">
+            <img src="images/gween-channapatna.jpg" alt="Traditional Channapatna artisan workshop">
+            <figcaption>Visiting Channapatna, a small town in Karnataka known for its 300-year-old tradition of lacquered wooden toys. Understanding the craft firsthand shaped every design decision.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="images/gween-dwino.jpg" alt="Dwino word-forming dinosaur toy design">
+            <figcaption>Dwino, a word-forming T-Rex where children stack letter blocks on the dinosaur's back to spell words. Designed to teach vocabulary while developing fine motor skills.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="images/gween-wobots.jpg" alt="Wobots mix and match robot toys">
+            <figcaption>Wobots are mix-and-match robots with interchangeable heads, bodies, and limbs. Kids can create dozens of unique characters from a small set of parts.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="images/gween-penstands.jpg" alt="Animal-themed pen stand designs">
+            <figcaption>Pen stands inspired by Gween classics Zarafu (giraffe) and Picazee (bee). Desk accessories that bring the playful Channapatna aesthetic to everyday objects.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="images/gween-stamps.jpg" alt="Wooden stamp set with nature themes">
+            <figcaption>Wooden stamps for storytelling. Children create scenes with trees, animals, flowers, and speech bubbles, building narratives through stamped illustrations.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <img src="images/gween-prototypes.jpg" alt="Collection of Gween toy prototypes">
+            <figcaption>Prototypes from the design process. Each toy went through multiple iterations with artisans to balance playability, safety, and manufacturability.</figcaption>
+        </figure>
+    </section>
+
+    <!-- EXPLORE MORE -->
+    <section class="explore-links">
+        <h2 class="explore-title">Explore More</h2>
+
+        <!-- Gween Website -->
+        <a class="explore-item" href="https://gweentoys.com" target="_blank">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>Gween Toys Website —</h3>
+                <p>Browse the full collection of handcrafted toys.</p>
+            </div>
+            <span class="explore-arrow">→</span>
         </a>
 
-        <div class="case-hero-content">
-            <div class="case-hero-text">
-                <div class="project-tags" style="margin-bottom: 1rem;">
-                    <span class="tag">Product Lead</span>
-                    <span class="tag">Toy Designer</span>
-                    <span class="tag">Research</span>
-                    <span class="tag">Ecommerce</span>
+        <!-- Channapatna Craft -->
+        <a class="explore-item" href="https://en.wikipedia.org/wiki/Channapatna_toy" target="_blank">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>About Channapatna Toys —</h3>
+                <p>Learn about the GI-tagged craft tradition behind these toys.</p>
+            </div>
+            <span class="explore-arrow">→</span>
+        </a>
+    </section>
+
+    <!-- 6. MORE WORK -->
+    <section class="more-work">
+        <h2 class="more-work-title">More Work</h2>
+        <div class="more-work-grid">
+            <a href="project-aqua.html" class="work-card">
+                <div class="work-card-image aqua-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 3rem;">🎨</span>
                 </div>
-                <h1 class="case-title">Gween Toys</h1>
-                <p class="case-subtitle">Led product strategy and design for an eco-friendly toy brand, partnering with traditional Channapatna artisans to scale from 5 to 30 sustainable wooden toys in a single quarter.</p>
-                <a href="https://gweentoys.com/" class="btn btn-primary" style="margin-top: 1.5rem;" target="_blank">Visit Gween Toys</a>
-            </div>
-            <div class="case-hero-image" style="background: var(--gween-gradient); min-height: 400px; display: flex; align-items: center; justify-content: center;">
-                <div style="text-align: center; color: var(--gween-primary);">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🌿</div>
-                    <p style="font-weight: 500;">Sustainable Toy Design</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats-row" style="margin: 0 var(--space-lg);">
-        <div class="stat-item">
-            <div class="stat-value">5 → 30</div>
-            <div class="stat-label">Toys Scaled</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">1 Quarter</div>
-            <div class="stat-label">Expansion Timeline</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">300+</div>
-            <div class="stat-label">Years of Craft Heritage</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">100%</div>
-            <div class="stat-label">Natural Materials</div>
-        </div>
-    </section>
-
-    <!-- The Challenge -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>The Challenge</h2>
-            <p>Gween Toys is a pro-environment toy brand based in Bengaluru, India. They started making eco-friendly and child-safe wooden toys in 2011, but had to shut operations due to demand/supply mismatch. In 2020, when India's Prime Minister announced that import taxes on toys would increase exponentially, Gween saw an opportunity to revive and expand their inventory from 5 to 30 toys in a single quarter.</p>
-        </div>
-        <div class="case-images grid-2">
-            <div class="case-image" style="background: var(--gween-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Market Opportunity Visual</span>
-            </div>
-            <div class="case-image" style="background: var(--gween-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Brand Vision Visual</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- My Role -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>My Role & Impact</h2>
-            <p>As Product Lead, I managed 2 interns and a colleague to rapidly expand the toy range. I owned the end-to-end design process, vendor coordination with Channapatna artisans, and product strategy that balanced educational value with playful design.</p>
-        </div>
-        <div class="value-props" style="padding: 0; margin-top: var(--space-lg);">
-            <div class="value-card">
-                <h3>Product Lead</h3>
-                <p>Led team of 3, setting product strategy and managing the rapid expansion from concept to production.</p>
-            </div>
-            <div class="value-card">
-                <h3>Toy Designer</h3>
-                <p>Designed educational toys that entertain while communicating environmental messages to children.</p>
-            </div>
-            <div class="value-card">
-                <h3>Vendor Coordination</h3>
-                <p>Partnered with traditional Channapatna artisans, bridging modern design with 300-year-old craft techniques.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Channapatna Heritage -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Channapatna: 300 Years of Craft</h2>
-            <p>Not many toys can boast of having a 300-year old history that began because of a king. Channapatna, located in rural Karnataka about 100km from the main city, is home to workshops inside normal homes where skilled artisans turn wood into beautiful toys using traditional techniques passed down through generations.</p>
-        </div>
-        <div class="case-images">
-            <div class="case-image full" style="background: var(--gween-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Artisans Hand Crafting Toys in Channapatna</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Field Research -->
-    <section class="case-section">
-        <div class="highlight-block" style="background: var(--gween-secondary); border-color: var(--gween-primary);">
-            <div class="highlight-value" style="color: var(--gween-primary);">Visit to Channapatna</div>
-            <div class="highlight-text">To better understand the situation and constraints, we took a trip to Channapatna before diving into design. The visit uncovered crucial insights about the artisans' capabilities, material limitations, and the economic pressures facing second-generation craftspeople.</div>
-        </div>
-    </section>
-
-    <!-- Design Philosophy -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Design Philosophy</h2>
-            <p>Every Gween toy is designed to entertain and educate children while communicating a message about saving the environment. We focused on creating toys that encourage open-ended play, build developmental skills, and connect children with nature through sustainable materials.</p>
-        </div>
-        <div class="case-images grid-2">
-            <div class="case-image" style="background: var(--gween-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Educational Toy Concepts</span>
-            </div>
-            <div class="case-image" style="background: var(--gween-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Sustainable Materials</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Toy: Dwino -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Featured Design: Dwino</h2>
-            <p>Dwino is a friendly dinosaur character designed to help kids form new words. As a bookworm who's always looking for opportunities to increase his vocabulary, Dwino features movable scales that spell his name—children can reorder them to form other easy words, developing word-forming skills through play.</p>
-        </div>
-        <div class="case-images">
-            <div class="case-image full" style="background: var(--gween-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Dwino Product Design & Specifications</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Results & Impact</h2>
-            <p>Successfully scaled Gween's product line during a pivotal market opportunity, creating sustainable toys that support traditional artisans while educating the next generation about environmental responsibility.</p>
-        </div>
-        <div class="stats-row" style="margin: 0;">
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">6x</div>
-                <div class="stat-label">Product Line Growth</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">30</div>
-                <div class="stat-label">Toys Designed</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">100%</div>
-                <div class="stat-label">Eco-Friendly</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" style="color: var(--color-accent);">Local</div>
-                <div class="stat-label">Artisan Partnership</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Learnings -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Key Learnings</h2>
-        </div>
-        <div class="value-props" style="padding: 0;">
-            <div class="value-card">
-                <h3>Design with Constraints</h3>
-                <p>Traditional craft techniques have limitations—designing within them led to more innovative, authentic products.</p>
-            </div>
-            <div class="value-card">
-                <h3>Field Research Matters</h3>
-                <p>Visiting Channapatna revealed insights that desk research never could—understanding craft is understanding people.</p>
-            </div>
-            <div class="value-card">
-                <h3>Purpose-Driven Products</h3>
-                <p>Toys that educate while entertaining create deeper connections with families who share environmental values.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- More Work -->
-    <section class="case-section">
-        <div class="section-header">
-            <h2>More Work</h2>
-        </div>
-        <div class="work-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <a href="project-aqua.html" class="project-card">
-                <div class="project-image aqua-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="aqua-preview">
-                                <div class="aqua-island"></div>
-                                <div class="aqua-character"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag tag-primary">Featured</span>
-                        <span class="tag">Adobe</span>
-                    </div>
+                <div class="work-card-info">
                     <h3>Project Aqua</h3>
-                    <p class="project-stat">▲ 4.9 App Store rating</p>
-                    <span class="project-link">View Case Study →</span>
+                    <p>Founding Designer · Adobe</p>
                 </div>
             </a>
-            <a href="adobe-express.html" class="project-card">
-                <div class="project-image express-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="express-preview">
-                                <div class="express-icon">Aa</div>
-                            </div>
-                        </div>
-                    </div>
+            <a href="adobe-express.html" class="work-card">
+                <div class="work-card-image express-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 2rem; font-weight: 700; color: var(--express-primary);">Aa</span>
                 </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag">Adobe</span>
-                        <span class="tag">Global Scale</span>
-                    </div>
+                <div class="work-card-info">
                     <h3>Adobe Express</h3>
-                    <p class="project-stat">▲ Translate & Card Maker</p>
-                    <span class="project-link">View Case Study →</span>
+                    <p>Translate & Card Maker</p>
                 </div>
             </a>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Let's create something <em>delightful</em></h2>
-            <p>Open to full-time opportunities and select freelance projects.</p>
-            <div class="cta-buttons">
-                <a href="mailto:kabra.raghvi@gmail.com" class="btn btn-primary">Get in Touch</a>
-                <a href="#" class="btn btn-secondary">Download Resume</a>
-            </div>
         </div>
     </section>
 
@@ -285,19 +186,16 @@
                     <h5>Portfolio</h5>
                     <a href="index.html">Work</a>
                     <a href="about.html">About</a>
-                    <a href="project-aqua.html">Project Aqua</a>
-                    <a href="gween-toys.html">Gween Toys</a>
                 </div>
                 <div class="footer-col">
                     <h5>Connect</h5>
                     <a href="https://www.linkedin.com/in/raghvikabra" target="_blank">LinkedIn</a>
-                    <a href="https://roogway.substack.com" target="_blank">Roogway Writes</a>
                     <a href="mailto:kabra.raghvi@gmail.com">Email</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Raghvi Kabra. Made with care in San Francisco.</p>
+            <p>© 2025 Raghvi Kabra</p>
         </div>
     </footer>
 
