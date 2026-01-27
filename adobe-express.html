@@ -3,165 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adobe Express — Raghvi Kabra</title>
+    <title>Auto-Translate for Adobe Express — Raghvi Kabra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="project-page">
     <!-- Navigation -->
     <nav class="nav">
         <a href="index.html" class="nav-logo">R</a>
         <div class="nav-links">
             <a href="index.html" class="nav-link">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="#" class="nav-link">Resume</a>
             <a href="https://www.linkedin.com/in/raghvikabra" class="nav-link" target="_blank">LinkedIn</a>
             <a href="mailto:kabra.raghvi@gmail.com" class="nav-cta">Get in Touch</a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
-    <!-- Case Study Hero -->
-    <section class="case-hero">
-        <a href="index.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Work
+    <!-- 1. HERO -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-left">
+                <h1 class="project-title">Auto-Translate</h1>
+                <p class="project-tagline">Auto-Translate for Adobe Express enables users to localize their designs instantly—translating text across pages while preserving layout, styling, and design intent. Announced at Adobe MAX 2023, the feature was key to expanding Express's global reach: with a template library built primarily in English, Auto-Translate became the entry point for users in non-English speaking markets to access and adapt thousands of professionally designed templates in their own language.</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Product Designer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Company</span>
+                        <span class="meta-value">Adobe</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-hero-image-container">
+                <img src="images/express-hero.jpg" alt="Auto-Translate feature in Adobe Express">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. STATS BAR -->
+    <section class="project-stats">
+        <div class="stat">
+            <span class="stat-number">86k</span>
+            <span class="stat-label">Monthly Translations</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">98.8%</span>
+            <span class="stat-label">Task Completion Rate</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">278%</span>
+            <span class="stat-label">Year-over-Year Growth</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">46</span>
+            <span class="stat-label">Languages Supported</span>
+        </div>
+    </section>
+
+    <!-- 3. KEY DECISIONS -->
+    <section class="project-decisions">
+        <h2 class="decisions-title">Key Decisions</h2>
+        <div class="decisions-grid">
+            <div class="decision-item">
+                <h3>Unlocking the Template Library for the World</h3>
+                <p>Express had thousands of beautifully designed templates—but they were predominantly in English, limiting their value for users in Japan, Brazil, Germany, and beyond. Auto-Translate transformed every English template into a globally accessible starting point, effectively multiplying the library's reach without requiring localized versions of each asset.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Translation as a Creative Tool, Not a Utility</h3>
+                <p>Early explorations treated translation as a settings menu buried in export options. We repositioned it as a first-class creative action—visible in the main toolbar—so users could think globally from the start, not as an afterthought.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Tone of Voice Control</h3>
+                <p>Translation isn't just about words—it's about how you say them. We added tonality controls (Formal, Informal, or unchanged) so users could adapt not just the language but the voice of their content. A startup's playful Instagram post and a bank's compliance document require different registers, even in the same target language.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Preserving Design Intent</h3>
+                <p>Translation isn't just swapping words. German runs longer than English; Japanese changes text direction. The system intelligently reflows text while respecting the creator's original layout decisions—scaling, wrapping, and adjusting without breaking the design.</p>
+            </div>
+            <div class="decision-item">
+                <h3>One-Click Simplicity, Power Underneath</h3>
+                <p>The panel needed to serve both the user translating a single Instagram post and the enterprise team localizing a 50-page campaign across 46 languages. We landed on progressive disclosure: auto-detected source language, simple target selection, and page-level control for those who need it—all without overwhelming the first-time user.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. THE EXPERIENCE - Videos/Images -->
+    <section class="workflow-videos">
+        <h2 class="workflow-title">The Experience</h2>
+
+        <!-- Video 1: Translate with precision -->
+        <div class="workflow-item">
+            <div class="workflow-video">
+                <video autoplay loop muted playsinline>
+                    <source src="images/express-translate-precision.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="workflow-text">
+                <h3>Translate with precision</h3>
+                <p>Pick your languages, set the tone, and choose exactly what to translate. Select entire pages or drill into specific text boxes—keep your brand name in English while localizing everything else. When you're ready, hit Translate.</p>
+            </div>
+        </div>
+
+        <!-- Video 2: No waiting around -->
+        <div class="workflow-item workflow-item-reverse">
+            <div class="workflow-video">
+                <video autoplay loop muted playsinline>
+                    <source src="images/express-translate-background.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="workflow-text">
+                <h3>No waiting around</h3>
+                <p>Translation takes time, especially for larger files. Instead of blocking you with a loading screen, we hand it off to AI in the background. Click away to keep working on other projects—your translated file will be ready when you are.</p>
+            </div>
+        </div>
+
+        <!-- Video 3: See everything at a glance -->
+        <div class="workflow-item">
+            <div class="workflow-video">
+                <video autoplay loop muted playsinline>
+                    <source src="images/express-translate-review.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="workflow-text">
+                <h3>See everything at a glance</h3>
+                <p>When translation is complete, review all your pages in one view. Scan for anything that needs tweaking before you export or share.</p>
+            </div>
+        </div>
+
+        <!-- Image 4: Before/After comparison -->
+        <div class="workflow-item workflow-item-reverse">
+            <div class="workflow-video">
+                <img src="images/express-translate-compare.jpg" alt="Before and after translation comparison">
+            </div>
+            <div class="workflow-text">
+                <h3>Layout intact, language transformed</h3>
+                <p>Text length changes, characters shift—but the design holds. No manual cleanup required. German, Japanese, Spanish—the layout adapts intelligently to preserve your original design intent.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLORE MORE -->
+    <section class="explore-links">
+        <h2 class="explore-title">Explore More</h2>
+
+        <a class="explore-item" href="https://www.adobe.com/express/" target="_blank">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>Adobe Express —</h3>
+                <p>The creative platform powering Auto-Translate.</p>
+            </div>
+            <span class="explore-arrow">→</span>
         </a>
 
-        <div class="case-hero-content">
-            <div class="case-hero-text">
-                <div class="project-tags" style="margin-bottom: 1rem;">
-                    <span class="tag">Adobe</span>
-                    <span class="tag">Global Scale</span>
-                    <span class="tag">Product Design</span>
+        <a class="explore-item" href="https://www.youtube.com/watch?v=adobe-max-2023" target="_blank">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>Adobe MAX 2023 Announcement —</h3>
+                <p>Where Auto-Translate was first introduced.</p>
+            </div>
+            <span class="explore-arrow">→</span>
+        </a>
+    </section>
+
+    <!-- 6. MORE WORK -->
+    <section class="more-work">
+        <h2 class="more-work-title">More Work</h2>
+        <div class="more-work-grid">
+            <a href="project-aqua.html" class="work-card">
+                <div class="work-card-image aqua-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="images/aqua-hero.jpg" alt="Project Aqua">
                 </div>
-                <h1 class="case-title">Adobe Express</h1>
-                <p class="case-subtitle">Designed key features for Adobe Express including Translate and Card Maker experiences that serve millions of users worldwide.</p>
-            </div>
-            <div class="case-hero-image" style="background: var(--express-gradient); min-height: 400px; display: flex; align-items: center; justify-content: center;">
-                <div style="text-align: center; color: var(--express-primary);">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">Aa</div>
-                    <p style="font-weight: 500;">Translate & Card Maker</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats-row" style="margin: 0 var(--space-lg);">
-        <div class="stat-item">
-            <div class="stat-value">Translate</div>
-            <div class="stat-label">Feature</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">Card Maker</div>
-            <div class="stat-label">Feature</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">Global</div>
-            <div class="stat-label">User Base</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">Millions</div>
-            <div class="stat-label">Users Served</div>
-        </div>
-    </section>
-
-    <!-- Placeholder Content -->
-    <section class="case-section">
-        <div class="highlight-block">
-            <div class="highlight-value">Case Study Coming Soon</div>
-            <div class="highlight-text">Full details about the Translate and Card Maker features will be added shortly. Check back soon or reach out to learn more about this project.</div>
-        </div>
-    </section>
-
-    <!-- Feature Overview -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Features Designed</h2>
-        </div>
-        <div class="value-props" style="padding: 0; margin-top: var(--space-lg);">
-            <div class="value-card">
-                <h3>Translate</h3>
-                <p>Enabling users to easily translate their creative content across multiple languages for global reach.</p>
-            </div>
-            <div class="value-card">
-                <h3>Card Maker</h3>
-                <p>Intuitive card creation experience for invitations, greetings, and personal celebrations.</p>
-            </div>
-            <div class="value-card">
-                <h3>Global Scale</h3>
-                <p>Designed for accessibility and usability across diverse international user bases.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- More Work -->
-    <section class="case-section">
-        <div class="section-header">
-            <h2>More Work</h2>
-        </div>
-        <div class="work-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <a href="project-aqua.html" class="project-card">
-                <div class="project-image aqua-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="aqua-preview">
-                                <div class="aqua-island"></div>
-                                <div class="aqua-character"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag tag-primary">Featured</span>
-                        <span class="tag">Adobe</span>
-                    </div>
+                <div class="work-card-info">
                     <h3>Project Aqua</h3>
-                    <p class="project-stat">▲ 4.9 App Store rating</p>
-                    <span class="project-link">View Case Study →</span>
+                    <p>Founding Designer · Adobe</p>
                 </div>
             </a>
-            <a href="gween-toys.html" class="project-card">
-                <div class="project-image gween-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="gween-preview">
-                                <div class="gween-toy">🌿</div>
-                            </div>
-                        </div>
-                    </div>
+            <a href="adobe-inspire.html" class="work-card">
+                <div class="work-card-image inspire-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="images/inspire-hero.jpg" alt="Adobe Inspire">
                 </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag">Product Lead</span>
-                        <span class="tag">Toy Design</span>
-                    </div>
-                    <h3>Gween Toys</h3>
-                    <p class="project-stat">▲ Scaled from 5 to 30 toys</p>
-                    <span class="project-link">View Case Study →</span>
+                <div class="work-card-info">
+                    <h3>Adobe Inspire</h3>
+                    <p>Experience Design Intern · Adobe</p>
                 </div>
             </a>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Let's create something <em>delightful</em></h2>
-            <p>Open to full-time opportunities and select freelance projects.</p>
-            <div class="cta-buttons">
-                <a href="mailto:kabra.raghvi@gmail.com" class="btn btn-primary">Get in Touch</a>
-                <a href="#" class="btn btn-secondary">Download Resume</a>
-            </div>
         </div>
     </section>
 
@@ -177,19 +210,16 @@
                     <h5>Portfolio</h5>
                     <a href="index.html">Work</a>
                     <a href="about.html">About</a>
-                    <a href="project-aqua.html">Project Aqua</a>
-                    <a href="gween-toys.html">Gween Toys</a>
                 </div>
                 <div class="footer-col">
                     <h5>Connect</h5>
                     <a href="https://www.linkedin.com/in/raghvikabra" target="_blank">LinkedIn</a>
-                    <a href="https://roogway.substack.com" target="_blank">Roogway Writes</a>
                     <a href="mailto:kabra.raghvi@gmail.com">Email</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Raghvi Kabra. Made with care in San Francisco.</p>
+            <p>© 2025 Raghvi Kabra</p>
         </div>
     </footer>
 
