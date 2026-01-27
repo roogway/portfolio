@@ -450,24 +450,28 @@ img {
     overflow: hidden;
 }
 /* NEW: Project card hero images */
-.project-image img {
+.project-image img,
+.project-image video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     transition: transform var(--transition-slow);
 }
-
 .project-card:hover .project-image img {
     transform: scale(1.05);
 }
 
 .project-featured .project-image {
-    aspect-ratio: auto;
+    aspect-ratio: 4/3;
     flex: 1;
     min-height: 400px;
-   max-height: 500px;
 }
 
+.project-featured .project-image img,
+.project-featured .project-image video {
+    object-position: center center;
+}
 .wonder-bg {
     background: var(--wonder-gradient);
 }
