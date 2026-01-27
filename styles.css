@@ -465,6 +465,7 @@ img {
     aspect-ratio: auto;
     flex: 1;
     min-height: 400px;
+   max-height: 500px;
 }
 
 .wonder-bg {
