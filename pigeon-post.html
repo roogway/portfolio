@@ -9,232 +9,123 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="project-page">
     <!-- Navigation -->
     <nav class="nav">
         <a href="index.html" class="nav-logo">R</a>
         <div class="nav-links">
             <a href="index.html" class="nav-link">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="#" class="nav-link">Resume</a>
             <a href="https://www.linkedin.com/in/raghvikabra" class="nav-link" target="_blank">LinkedIn</a>
             <a href="mailto:kabra.raghvi@gmail.com" class="nav-cta">Get in Touch</a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
-    <!-- Case Study Hero -->
-    <section class="case-hero">
-        <a href="index.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Work
+    <!-- 1. HERO -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-left">
+                <h1 class="project-title">Pigeon Post</h1>
+                <p class="project-tagline">A delightful way to send digital postcards and letters to the people you care about. In an age of instant messages, Pigeon Post brings back the anticipation and warmth of receiving something personal—crafted just for you.</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Creator & Designer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value">Side Project</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                </div>
+                <a href="https://pigeonpost.fun" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">Try Pigeon Post →</a>
+            </div>
+            <div class="project-hero-image-container">
+                <img src="images/pigeon-hero.jpg" alt="Pigeon Post - Digital postcards and letters">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. KEY DECISIONS (Minimal) -->
+    <section class="project-decisions">
+        <h2 class="decisions-title">Why Pigeon Post?</h2>
+        <div class="decisions-grid">
+            <div class="decision-item">
+                <h3>Slow Down the Conversation</h3>
+                <p>In a world of read receipts and instant replies, there's something magical about waiting. Pigeon Post embraces intentional delay—giving both sender and receiver time to savor the anticipation.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Digital, But Personal</h3>
+                <p>No stamps, no postal delays, no lost mail—but still that feeling of crafting something just for someone. Pick your design, write your message, choose when it arrives.</p>
+            </div>
+            <div class="decision-item">
+                <h3>Built with AI, Designed by Hand</h3>
+                <p>A passion project built in spare time, using modern AI tools to accelerate development while staying true to craft in every design decision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. FULL-WIDTH DEMO VIDEO -->
+    <section class="project-video-full">
+        <video autoplay loop muted playsinline class="full-width-video">
+            <source src="images/pigeon-demo.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- 4. SCREEN GRABS GALLERY -->
+    <section class="project-gallery">
+        <div class="gallery-grid-3">
+            <div class="gallery-item">
+                <img src="images/pigeon-screen-1.jpg" alt="Pigeon Post - Compose your message">
+            </div>
+            <div class="gallery-item">
+                <img src="images/pigeon-screen-2.jpg" alt="Pigeon Post - Choose your postcard">
+            </div>
+            <div class="gallery-item">
+                <img src="images/pigeon-screen-3.jpg" alt="Pigeon Post - Send with love">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TRY IT LINK -->
+    <section class="explore-links">
+        <h2 class="explore-title">Try It Yourself</h2>
+
+        <a class="explore-item" href="https://pigeonpost.fun" target="_blank">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>Send a Pigeon —</h3>
+                <p>Experience the joy of digital letter-writing.</p>
+            </div>
+            <span class="explore-arrow">→</span>
         </a>
+    </section>
 
-        <div class="case-hero-content">
-            <div class="case-hero-text">
-                <div class="project-tags" style="margin-bottom: 1rem;">
-                    <span class="tag">Side Project</span>
-                    <span class="tag">Design + Code</span>
-                    <span class="tag">End-to-End</span>
+    <!-- 6. MORE WORK -->
+    <section class="more-work">
+        <h2 class="more-work-title">More Work</h2>
+        <div class="more-work-grid">
+            <a href="project-aqua.html" class="work-card">
+                <div class="work-card-image aqua-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="images/aqua-hero.jpg" alt="Project Aqua">
                 </div>
-                <h1 class="case-title">Pigeon Post</h1>
-                <p class="case-subtitle">A delightful pixel art messaging app where animated carrier pigeons deliver virtual gifts. Designed and built end-to-end—demonstrating full-stack product ownership from concept to deployed experience.</p>
-                <a href="https://pigeonpost.fun" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">Visit Live Site →</a>
-            </div>
-            <div class="case-hero-image" style="background: var(--pigeon-gradient); min-height: 400px; display: flex; align-items: center; justify-content: center;">
-                <div style="text-align: center;">
-                    <div style="font-size: 5rem; margin-bottom: 1rem;">🕊️</div>
-                    <p style="font-weight: 500; color: var(--pigeon-primary);">pigeonpost.fun</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats-row" style="margin: 0 var(--space-lg);">
-        <div class="stat-item">
-            <div class="stat-value">Solo</div>
-            <div class="stat-label">Designer + Developer</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">2025</div>
-            <div class="stat-label">Project Year</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">Pixel Art</div>
-            <div class="stat-label">Visual Style</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">React</div>
-            <div class="stat-label">Tech Stack</div>
-        </div>
-    </section>
-
-    <!-- The Concept -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>The Concept</h2>
-            <p>In an age of instant messaging, what if we could bring back the anticipation and delight of receiving a physical letter? Pigeon Post reimagines digital gifting through the charming metaphor of carrier pigeons delivering pixel art presents—exploring how nostalgic aesthetics can create more meaningful digital connections.</p>
-        </div>
-        <div class="case-images grid-2">
-            <div class="case-image" style="background: var(--pigeon-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Concept Sketch 1</span>
-            </div>
-            <div class="case-image" style="background: var(--pigeon-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Concept Sketch 2</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Design Philosophy -->
-    <section class="case-section">
-        <div class="highlight-block" style="background: var(--pigeon-secondary); border-color: var(--pigeon-primary);">
-            <div class="highlight-value" style="color: var(--pigeon-primary);">Delight First</div>
-            <div class="highlight-text">Every interaction should spark joy—from the flutter of pigeon wings to the satisfying "pop" of opening a gift. Micro-interactions become moments of connection.</div>
-        </div>
-    </section>
-
-    <!-- Visual Design -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Pixel Art Aesthetic</h2>
-            <p>The visual style draws from nostalgic pixel art games, creating a warm, handcrafted feeling that stands apart from the polished, minimal aesthetic dominating most apps. This deliberate choice reinforces the analog, letter-writing metaphor at the product's core.</p>
-        </div>
-        <div class="case-images">
-            <div class="case-image full" style="background: var(--pigeon-secondary); display: flex; align-items: center; justify-content: center;">
-                <span style="color: var(--color-text-muted);">Pixel Art Assets & Style Guide</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Experience -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Core Experience Flow</h2>
-            <p>The app centers around three key moments: sending a pigeon, watching it fly, and receiving the gift. Each moment is designed to maximize anticipation and emotional resonance—the digital equivalent of waiting for mail.</p>
-        </div>
-        <div class="case-images grid-3">
-            <div class="case-image" style="background: var(--pigeon-secondary); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
-                <div style="font-size: 2rem;">✉️</div>
-                <span style="color: var(--color-text-muted); font-size: 0.875rem;">Send</span>
-            </div>
-            <div class="case-image" style="background: var(--pigeon-secondary); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
-                <div style="font-size: 2rem;">🕊️</div>
-                <span style="color: var(--color-text-muted); font-size: 0.875rem;">Watch</span>
-            </div>
-            <div class="case-image" style="background: var(--pigeon-secondary); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
-                <div style="font-size: 2rem;">🎁</div>
-                <span style="color: var(--color-text-muted); font-size: 0.875rem;">Receive</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Implementation -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Technical Implementation</h2>
-            <p>Built with React and modern web technologies, with careful attention to mobile responsiveness, animation performance, and social sharing through Open Graph metadata—enabling organic virality.</p>
-        </div>
-        <div class="stack-grid" style="margin-top: var(--space-lg);">
-            <div class="stack-category">
-                <h4>Frontend</h4>
-                <div class="stack-icons">
-                    <span class="stack-item" title="React">⚛️</span>
-                    <span class="stack-item" title="CSS">CSS</span>
-                    <span class="stack-item" title="Framer Motion">FM</span>
-                </div>
-            </div>
-            <div class="stack-category">
-                <h4>Tools</h4>
-                <div class="stack-icons">
-                    <span class="stack-item" title="Figma">F</span>
-                    <span class="stack-item" title="Cursor">C</span>
-                    <span class="stack-item" title="Claude">AI</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learnings -->
-    <section class="case-section">
-        <div class="case-section-header">
-            <h2>Key Learnings</h2>
-            <p>This project deepened my skills in frontend development, animation implementation, and end-to-end product ownership—validating the value of shipping quickly and learning through real user feedback.</p>
-        </div>
-        <div class="value-props" style="padding: 0; margin-top: var(--space-lg);">
-            <div class="value-card">
-                <h3>Animation as UX</h3>
-                <p>Smooth, delightful micro-interactions aren't decoration—they're core to the emotional experience and user engagement.</p>
-            </div>
-            <div class="value-card">
-                <h3>Mobile-First Thinking</h3>
-                <p>Prioritizing mobile responsiveness from day one ensured the experience works beautifully across all devices.</p>
-            </div>
-            <div class="value-card">
-                <h3>Ship & Learn</h3>
-                <p>Launching early and iterating based on real feedback beats perfecting in isolation. Users teach you what matters.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- More Work -->
-    <section class="case-section">
-        <div class="section-header">
-            <h2>More Work</h2>
-        </div>
-        <div class="work-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <a href="project-wonder.html" class="project-card">
-                <div class="project-image wonder-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen">
-                            <div class="wonder-preview">
-                                <div class="wonder-island"></div>
-                                <div class="wonder-character"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag tag-primary">Featured</span>
-                        <span class="tag">Adobe</span>
-                    </div>
-                    <h3>Project Wonder</h3>
-                    <p class="project-stat">▲ 4.9 App Store rating</p>
-                    <span class="project-link">View Case Study →</span>
+                <div class="work-card-info">
+                    <h3>Project Aqua</h3>
+                    <p>Founding Designer · Adobe</p>
                 </div>
             </a>
-            <a href="index.html" class="project-card">
-                <div class="project-image placeholder-bg">
-                    <div class="project-mockup">
-                        <div class="mockup-screen placeholder-preview">
-                            <span>←</span>
-                        </div>
-                    </div>
+            <a href="gween-toys.html" class="work-card">
+                <div class="work-card-image gween-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="images/gween-hero.jpg" alt="Gween Toys">
                 </div>
-                <div class="project-info">
-                    <h3>View All Work</h3>
-                    <p class="project-desc">Return to portfolio</p>
-                    <span class="project-link">Back to Home →</span>
+                <div class="work-card-info">
+                    <h3>Gween Toys</h3>
+                    <p>Product Lead · Toy Design</p>
                 </div>
             </a>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Let's create something <em>delightful</em></h2>
-            <p>Open to full-time opportunities and select freelance projects.</p>
-            <div class="cta-buttons">
-                <a href="mailto:kabra.raghvi@gmail.com" class="btn btn-primary">Get in Touch</a>
-                <a href="#" class="btn btn-secondary">Download Resume</a>
-            </div>
         </div>
     </section>
 
@@ -250,19 +141,16 @@
                     <h5>Portfolio</h5>
                     <a href="index.html">Work</a>
                     <a href="about.html">About</a>
-                    <a href="project-wonder.html">Project Wonder</a>
-                    <a href="pigeon-post.html">Pigeon Post</a>
                 </div>
                 <div class="footer-col">
                     <h5>Connect</h5>
                     <a href="https://www.linkedin.com/in/raghvikabra" target="_blank">LinkedIn</a>
-                    <a href="https://roogway.substack.com" target="_blank">Roogway Writes</a>
                     <a href="mailto:kabra.raghvi@gmail.com">Email</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Raghvi Kabra. Made with care in San Francisco.</p>
+            <p>© 2025 Raghvi Kabra</p>
         </div>
     </footer>
 
