@@ -23,7 +23,7 @@
 
     <!-- 1. HERO -->
     <section class="project-hero">
-        <div class="project-hero-content">
+        <div class="project-hero-content project-hero-aligned">
             <div class="project-hero-left">
                 <h1 class="project-title">Pigeon Post</h1>
                 <p class="project-tagline">A delightful way to send digital postcards and letters to the people you care about. In an age of instant messages, Pigeon Post brings back the anticipation and warmth of receiving something personal—crafted just for you.</p>
@@ -43,54 +43,100 @@
                 </div>
                 <a href="https://pigeonpost.fun" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">Try Pigeon Post →</a>
             </div>
-            <div class="project-hero-image-container">
+            <div class="project-hero-image-container project-hero-image-top">
                 <img src="images/pigeon-hero.jpg" alt="Pigeon Post - Digital postcards and letters">
             </div>
         </div>
     </section>
 
-    <!-- 2. KEY DECISIONS (Minimal) -->
-    <section class="project-decisions">
-        <h2 class="decisions-title">Why Pigeon Post?</h2>
-        <div class="decisions-grid">
-            <div class="decision-item">
-                <h3>Slow Down the Conversation</h3>
-                <p>In a world of read receipts and instant replies, there's something magical about waiting. Pigeon Post embraces intentional delay—giving both sender and receiver time to savor the anticipation.</p>
+    <!-- 2. THE EXPERIENCE - Videos/Images in Browser Frames -->
+    <section class="workflow-videos">
+        <h2 class="workflow-title">The Experience</h2>
+
+        <!-- Demo Video (Prominent) -->
+        <div class="workflow-item">
+            <div class="browser-frame">
+                <div class="browser-chrome">
+                    <div class="browser-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="browser-content">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/pigeon-demo.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
-            <div class="decision-item">
-                <h3>Digital, But Personal</h3>
-                <p>No stamps, no postal delays, no lost mail—but still that feeling of crafting something just for someone. Pick your design, write your message, choose when it arrives.</p>
+            <div class="workflow-text">
+                <h3>Craft something personal</h3>
+                <p>Choose a postcard design, write your heartfelt message, and schedule when it arrives. Pigeon Post handles the rest—delivering a moment of delight right to their inbox.</p>
             </div>
-            <div class="decision-item">
-                <h3>Built with AI, Designed by Hand</h3>
-                <p>A passion project built in spare time, using modern AI tools to accelerate development while staying true to craft in every design decision.</p>
+        </div>
+
+        <!-- Screen 1 -->
+        <div class="workflow-item workflow-item-reverse">
+            <div class="browser-frame">
+                <div class="browser-chrome">
+                    <div class="browser-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="browser-content">
+                    <img src="images/pigeon-screen-1.jpg" alt="Pigeon Post - Choose your design">
+                </div>
+            </div>
+            <div class="workflow-text">
+                <h3>Pick a postcard</h3>
+                <p>Browse through a curated collection of beautifully designed postcards. Each one sets a different mood—playful, heartfelt, or simply warm.</p>
+            </div>
+        </div>
+
+        <!-- Screen 2 -->
+        <div class="workflow-item">
+            <div class="browser-frame">
+                <div class="browser-chrome">
+                    <div class="browser-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="browser-content">
+                    <img src="images/pigeon-screen-2.jpg" alt="Pigeon Post - Write your message">
+                </div>
+            </div>
+            <div class="workflow-text">
+                <h3>Write your message</h3>
+                <p>No character limits, no read receipts. Just space to say what you really mean. Take your time—the recipient won't know it's coming.</p>
+            </div>
+        </div>
+
+        <!-- Screen 3 -->
+        <div class="workflow-item workflow-item-reverse">
+            <div class="browser-frame">
+                <div class="browser-chrome">
+                    <div class="browser-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="browser-content">
+                    <img src="images/pigeon-screen-3.jpg" alt="Pigeon Post - Send with love">
+                </div>
+            </div>
+            <div class="workflow-text">
+                <h3>Send it flying</h3>
+                <p>Your pigeon takes off. The recipient gets a delightful notification, and the anticipation builds. Digital mail, but with soul.</p>
             </div>
         </div>
     </section>
 
-    <!-- 3. FULL-WIDTH DEMO VIDEO -->
-    <section class="project-video-full">
-        <video autoplay loop muted playsinline class="full-width-video">
-            <source src="images/pigeon-demo.mp4" type="video/mp4">
-        </video>
-    </section>
-
-    <!-- 4. SCREEN GRABS GALLERY -->
-    <section class="project-gallery">
-        <div class="gallery-grid-3">
-            <div class="gallery-item">
-                <img src="images/pigeon-screen-1.jpg" alt="Pigeon Post - Compose your message">
-            </div>
-            <div class="gallery-item">
-                <img src="images/pigeon-screen-2.jpg" alt="Pigeon Post - Choose your postcard">
-            </div>
-            <div class="gallery-item">
-                <img src="images/pigeon-screen-3.jpg" alt="Pigeon Post - Send with love">
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. TRY IT LINK -->
+    <!-- 3. TRY IT LINK -->
     <section class="explore-links">
         <h2 class="explore-title">Try It Yourself</h2>
 
@@ -104,7 +150,7 @@
         </a>
     </section>
 
-    <!-- 6. MORE WORK -->
+    <!-- 4. MORE WORK -->
     <section class="more-work">
         <h2 class="more-work-title">More Work</h2>
         <div class="more-work-grid">
@@ -117,13 +163,13 @@
                     <p>Founding Designer · Adobe</p>
                 </div>
             </a>
-            <a href="gween-toys.html" class="work-card">
-                <div class="work-card-image gween-bg" style="display: flex; align-items: center; justify-content: center;">
-                    <img src="images/gween-hero.jpg" alt="Gween Toys">
+            <a href="adobe-express.html" class="work-card">
+                <div class="work-card-image express-bg" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="images/express-hero.jpg" alt="Auto-Translate">
                 </div>
                 <div class="work-card-info">
-                    <h3>Gween Toys</h3>
-                    <p>Product Lead · Toy Design</p>
+                    <h3>Auto-Translate</h3>
+                    <p>Adobe Express</p>
                 </div>
             </a>
         </div>
