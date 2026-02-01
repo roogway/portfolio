@@ -15,6 +15,7 @@
     --color-accent: #FF6B35;
     --color-accent-soft: #FFF0EB;
     --color-border: #EBEBEB;
+    --color-stat: #14B8A6;
     
     /* Project colors */
     --wonder-primary: #00C9B7;
@@ -699,7 +700,7 @@ img {
 .project-stat {
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-accent);
+    color: var(--color-stat);
 }
 
 .project-desc {
