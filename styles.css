@@ -759,9 +759,11 @@ img {
     box-shadow: var(--shadow-sm);
 }
 
-.stack-item svg {
+.stack-item svg,
+.stack-item img {
     width: 28px;
     height: 28px;
+    object-fit: contain;
 }
 
 /* =====================================================
@@ -788,7 +790,7 @@ img {
 
 .cta h2 em {
     font-style: italic;
-    color: var(--color-accent);
+    color: var(--color-stat);  /* Green accent for visibility on dark bg */
 }
 
 .cta p {
