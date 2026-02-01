@@ -1261,6 +1261,14 @@ img {
     gap: var(--space-2xl);
     align-items: end;
 }
+/* Hero variant: align image to top with title */
+.project-hero-content.project-hero-aligned {
+    align-items: start;
+}
+
+.project-hero-image-top img {
+    border-radius: var(--radius-lg);
+}
 
 .project-title {
     font-family: var(--font-display);
@@ -1612,6 +1620,63 @@ img {
     .project-meta {
         flex-wrap: wrap;
         gap: var(--space-md);
+    }
+}
+/* Pigeon Post - Centered Demo Video */
+.demo-video-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+}
+
+.demo-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text);
+}
+
+.demo-video-container {
+    max-width: 100%;
+}
+
+.demo-video-container .browser-frame {
+    margin: 0 auto;
+}
+
+/* Pigeon Post - 3 Screens Grid */
+.pigeon-screens {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+}
+
+.pigeon-screens-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.pigeon-screen-item {
+    text-align: center;
+}
+
+.pigeon-screen-item .browser-frame {
+    margin-bottom: var(--space-md);
+}
+
+.pigeon-screen-label {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .pigeon-screens-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
     }
 }
 /* ================================================
