@@ -5,17 +5,17 @@
 
 /* CSS Variables */
 :root {
-    /* Colors */
-    --color-bg: #FAFAFA;
+    /* Colors - Warm Neutral Palette */
+    --color-bg: #FAF9F7;              /* Warm off-white */
     --color-bg-card: #FFFFFF;
-    --color-bg-dark: #1A1A1A;
-    --color-text: #1A1A1A;
-    --color-text-secondary: #6B6B6B;
-    --color-text-muted: #9B9B9B;
-    --color-accent: #FF6B35;
-    --color-accent-soft: #FFF0EB;
-    --color-border: #EBEBEB;
-    --color-stat: #14B8A6;
+    --color-bg-dark: #1C1917;         /* Warm black */
+    --color-text: #1C1917;            /* Warm black (stone-900) */
+    --color-text-secondary: #57534E;  /* Warm gray (stone-600) */
+    --color-text-muted: #A8A29E;      /* Warm muted (stone-400) */
+    --color-accent: #1C1917;          /* Dark accent - confident, not flashy */
+    --color-accent-soft: #F5F5F4;     /* Warm light gray */
+    --color-border: #E7E5E4;          /* Warm border (stone-200) */
+    --color-stat: #16A34A;            /* Warmer forest green for positive stats */
     
     /* Project colors */
     --wonder-primary: #00C9B7;
@@ -134,7 +134,7 @@ img {
 }
 
 .nav-logo:hover {
-    color: var(--color-accent);
+    color: var(--color-text-secondary);
 }
 
 .nav-links {
@@ -169,7 +169,7 @@ img {
 }
 
 .nav-cta:hover {
-    background: var(--color-accent);
+    background: var(--color-text-secondary);
     transform: translateY(-1px);
 }
 
@@ -298,7 +298,7 @@ img {
 .shape-3 {
     width: 200px;
     height: 200px;
-    background: linear-gradient(135deg, var(--color-accent-soft) 0%, #FFE4D9 100%);
+    background: linear-gradient(135deg, #F5F5F4 0%, #E7E5E4 100%);
     top: 40%;
     left: 20%;
     animation-delay: -10s;
@@ -680,15 +680,15 @@ img {
     font-weight: 500;
     padding: 0.25rem 0.625rem;
     border-radius: 100px;
-    background: var(--color-bg);
+    background: transparent;
     color: var(--color-text-secondary);
     border: 1px solid var(--color-border);
 }
 
 .tag-primary {
-    background: var(--color-accent);
+    background: var(--color-text);
     color: white;
-    border-color: var(--color-accent);
+    border-color: var(--color-text);
 }
 
 .project-info h3 {
@@ -718,7 +718,8 @@ img {
 }
 
 .project-card:hover .project-link {
-    color: var(--color-accent);
+    color: var(--color-text);
+    text-decoration: underline;
 }
 
 /* =====================================================
@@ -834,7 +835,7 @@ img {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 8px 24px rgba(28, 25, 23, 0.2);
 }
 
 .btn-secondary {
