@@ -1659,6 +1659,12 @@ img {
     gap: var(--space-lg);
 }
 
+.pigeon-screens-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+}
+
 .pigeon-screen-item {
     text-align: center;
 }
@@ -1674,7 +1680,8 @@ img {
 }
 
 @media (max-width: 768px) {
-    .pigeon-screens-grid {
+    .pigeon-screens-grid,
+    .pigeon-screens-grid-2x2 {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
     }
