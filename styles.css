@@ -848,13 +848,15 @@ img {
     max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    gap: var(--space-xl);
+    justify-content: center;
+    gap: var(--space-2xl);
     margin-bottom: var(--space-xl);
+    text-align: center;
 }
 
 .footer-brand {
     max-width: 300px;
+    text-align: center;
 }
 
 .footer-logo {
@@ -872,6 +874,10 @@ img {
 .footer-links {
     display: flex;
     gap: var(--space-2xl);
+}
+
+.footer-col {
+    text-align: left;
 }
 
 .footer-col h5 {
@@ -900,6 +906,7 @@ img {
     margin: 0 auto;
     padding-top: var(--space-lg);
     border-top: 1px solid var(--color-border);
+    text-align: center;
 }
 
 .footer-bottom p {
