@@ -92,6 +92,73 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
 
+    // =====================================================
+    // INTERACTIVE FLOATING SHAPES - Cursor Following
+    // =====================================================
+    const floatShapes = document.querySelectorAll('.float-shape');
+    
+    if (floatShapes.length > 0) {
+        // Store original positions
+        const shapeData = [];
+        floatShapes.forEach((shape, index) => {
+            const rect = shape.getBoundingClientRect();
+            shapeData.push({
+                element: shape,
+                speed: parseFloat(shape.dataset.speed) || 0.03,
+                x: 0,
+                y: 0,
+                targetX: 0,
+                targetY: 0
+            });
+        });
+
+        // Track mouse position
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Calculate offset from center
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const offsetX = (mouseX - centerX);
+            const offsetY = (mouseY - centerY);
+
+            // Update target positions for each shape
+            shapeData.forEach((data) => {
+                data.targetX = offsetX * data.speed;
+                data.targetY = offsetY * data.speed;
+            });
+        });
+
+        // Smooth animation loop
+        function animateShapes() {
+            shapeData.forEach((data) => {
+                // Ease towards target position
+                data.x += (data.targetX - data.x) * 0.08;
+                data.y += (data.targetY - data.y) * 0.08;
+                
+                // Apply transform
+                data.element.style.transform = `translate(${data.x}px, ${data.y}px)`;
+            });
+            
+            requestAnimationFrame(animateShapes);
+        }
+
+        // Start animation
+        animateShapes();
+
+        // Reset on mouse leave
+        document.addEventListener('mouseleave', () => {
+            shapeData.forEach((data) => {
+                data.targetX = 0;
+                data.targetY = 0;
+            });
+        });
+    }
+
     // Console greeting
     console.log('%c👋 Hey there!', 'font-size: 24px; font-weight: bold;');
     console.log('%cThanks for checking out my portfolio code.', 'font-size: 14px;');
