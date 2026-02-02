@@ -271,20 +271,26 @@ img {
     overflow: hidden;
     z-index: 1;
     
-    /* Light diffused gradient background */
+    /* Dreamy gradient background - pink/magenta to peach/orange */
     background: 
-        radial-gradient(circle at 30% 40%, rgba(232, 251, 249, 0.6) 0%, transparent 50%),
-        radial-gradient(circle at 70% 60%, rgba(254, 243, 199, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 50% 80%, rgba(239, 246, 255, 0.5) 0%, transparent 40%),
-        var(--color-bg);
-    
-    /* Dot grid overlay */
-    background-image: 
-        radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-        radial-gradient(circle at 30% 40%, rgba(232, 251, 249, 0.6) 0%, transparent 50%),
-        radial-gradient(circle at 70% 60%, rgba(254, 243, 199, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 50% 80%, rgba(239, 246, 255, 0.5) 0%, transparent 40%);
-    background-size: 20px 20px, 100% 100%, 100% 100%, 100% 100%;
+        radial-gradient(ellipse 80% 70% at 55% 40%, 
+            rgba(219, 39, 119, 0.5) 0%, 
+            rgba(244, 114, 182, 0.4) 25%,
+            rgba(251, 146, 60, 0.3) 50%,
+            rgba(254, 215, 170, 0.2) 70%,
+            transparent 100%),
+        #FAF5F0;
+}
+
+/* Grain texture overlay */
+.hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
 }
 
 /* =====================================================
