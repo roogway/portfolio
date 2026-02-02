@@ -2495,3 +2495,186 @@ video, img {
         align-items: center;
     }
 }
+
+/* =====================================================
+   ABOUT PAGE - Clean Editorial Layout
+   ===================================================== */
+
+.about-page {
+    background: var(--color-bg);
+}
+
+.about-main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + var(--space-2xl)) var(--space-lg) var(--space-2xl);
+}
+
+/* Hero - Simple name + tagline */
+.about-hero-simple {
+    margin-bottom: var(--space-2xl);
+}
+
+.about-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+}
+
+.about-tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Intro paragraphs */
+.about-intro {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-intro p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.about-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Career Section */
+.career-section {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.career-heading {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+}
+
+/* Career Timeline */
+.career-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.career-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-lg);
+}
+
+.career-date {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    padding-top: 0.25rem;
+}
+
+.career-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.career-title {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.career-company {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.career-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Contact Section */
+.about-contact {
+    margin-bottom: var(--space-xl);
+}
+
+.contact-heading {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.contact-links {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+.contact-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    transition: border-color var(--transition-fast);
+}
+
+.contact-links a:hover {
+    border-color: var(--color-text);
+}
+
+/* About Page Responsive */
+@media (max-width: 768px) {
+    .about-main {
+        padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+    }
+
+    .about-name {
+        font-size: 2.5rem;
+    }
+
+    .about-tagline {
+        font-size: 1.125rem;
+    }
+
+    .about-intro p {
+        font-size: 1rem;
+    }
+
+    .career-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
+    }
+
+    .career-date {
+        font-size: 0.8125rem;
+        padding-top: 0;
+    }
+
+    .career-title {
+        font-size: 1rem;
+    }
+
+    .career-description {
+        font-size: 0.9375rem;
+    }
+}
