@@ -246,16 +246,19 @@ img {
     padding: var(--space-sm) var(--space-md);
     font-size: 0.9375rem;
     font-weight: 500;
-    color: var(--color-text-secondary);
-    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--color-text);
     border-radius: 100px;
     transition: all var(--transition-base);
     animation: fadeUp 0.8s ease 0.2s forwards;
     opacity: 0;
+    backdrop-filter: blur(4px);
 }
 
 .hero-cta:hover {
-    color: var(--color-text);
+    color: white;
+    background: var(--color-text);
     border-color: var(--color-text);
     transform: translateY(2px);
 }
