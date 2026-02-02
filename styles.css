@@ -270,6 +270,21 @@ img {
     pointer-events: none;
     overflow: hidden;
     z-index: 1;
+    
+    /* Light diffused gradient background */
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(232, 251, 249, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(254, 243, 199, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(239, 246, 255, 0.5) 0%, transparent 40%),
+        var(--color-bg);
+    
+    /* Dot grid overlay */
+    background-image: 
+        radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 30% 40%, rgba(232, 251, 249, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(254, 243, 199, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(239, 246, 255, 0.5) 0%, transparent 40%);
+    background-size: 20px 20px, 100% 100%, 100% 100%, 100% 100%;
 }
 
 /* =====================================================
@@ -283,36 +298,30 @@ img {
     cursor: grab;
     pointer-events: auto;
     z-index: 10;
-    transition: transform 0.2s ease, filter 0.2s ease;
+    transition: transform 0.15s ease;
     user-select: none;
     -webkit-user-select: none;
 }
 
 .sticker:hover {
-    transform: rotate(0deg) scale(1.08);
+    transform: rotate(0deg) scale(1.05);
     z-index: 20;
 }
 
 .sticker.dragging {
     cursor: grabbing;
     z-index: 100;
-    transform: rotate(0deg) scale(1.12);
+    transform: rotate(0deg) scale(1.08);
     transition: none;
 }
 
-/* Sticker image with white stroke and shadow */
+/* Sticker image - clean, no effects (borders baked into PNG) */
 .sticker-img {
     display: block;
     max-width: var(--sticker-size, 100px);
     max-height: var(--sticker-size, 100px);
     width: auto;
     height: auto;
-    /* Simplified white stroke + shadow */
-    filter: 
-        drop-shadow(0 0 2px white)
-        drop-shadow(0 0 2px white)
-        drop-shadow(0 0 3px white)
-        drop-shadow(3px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 /* Size variants */
@@ -321,11 +330,10 @@ img {
 .sticker--lg { --sticker-size: 140px; }
 .sticker--xl { --sticker-size: 180px; }
 
-/* Legacy emoji icon support (fallback) */
+/* Emoji icon support (temporary placeholders) */
 .sticker-icon {
     font-size: 2.5rem;
     line-height: 1;
-    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
 }
 
 .sticker-icon-text {
@@ -333,7 +341,6 @@ img {
     font-size: 2rem;
     font-weight: 700;
     color: #FF0000;
-    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
 }
 
 .sticker-icon-svg {
@@ -342,13 +349,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: 
-        drop-shadow(0 0 0 white)
-        drop-shadow(1px 0 0 white)
-        drop-shadow(-1px 0 0 white)
-        drop-shadow(0 1px 0 white)
-        drop-shadow(0 -1px 0 white)
-        drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
 }
 
 .sticker-icon-svg svg {
@@ -360,7 +360,7 @@ img {
     color: #1DB954;
 }
 
-/* Sticker Popover - Speech Bubble */
+/* Sticker Popover - Clean Speech Bubble */
 .sticker-popover {
     position: absolute;
     bottom: calc(100% + 16px);
@@ -368,10 +368,10 @@ img {
     transform: translateX(-50%);
     background: white;
     border: 2px solid #1C1917;
-    border-radius: 20px;
-    padding: 12px 18px;
+    border-radius: 16px;
+    padding: 10px 16px;
     white-space: nowrap;
-    font-family: 'DM Sans', monospace;
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.875rem;
     display: flex;
     flex-direction: column;
@@ -380,9 +380,8 @@ img {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
     z-index: 30;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Speech bubble tail */
