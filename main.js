@@ -14,6 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Nav scroll effect - transparent at top, white when scrolled
+    // Only applies on homepage (index.html) - other pages stay solid
+    const nav = document.querySelector('.nav');
+    const isHomepage = window.location.pathname === '/' || 
+                       window.location.pathname.endsWith('index.html') ||
+                       window.location.pathname === '';
+    
+    if (nav) {
+        if (isHomepage) {
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll(); // Check initial state
+        } else {
+            // Non-homepage: always show solid nav
+            nav.classList.add('scrolled');
+        }
+    }
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
