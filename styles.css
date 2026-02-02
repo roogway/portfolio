@@ -2505,38 +2505,48 @@ video, img {
 }
 
 .about-main {
-    max-width: 720px;
+    max-width: 860px;
     margin: 0 auto;
     padding: calc(var(--nav-height) + var(--space-2xl)) var(--space-lg) var(--space-2xl);
 }
 
-/* Hero - Simple name + tagline with avatar */
-.about-hero-simple {
+/* Hero - Photo card layout */
+.about-hero-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-xl);
     margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
 }
 
-.about-hero-content {
-    display: flex;
-    align-items: center;
-    gap: var(--space-lg);
-}
-
-.about-avatar {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
+.about-photo-card {
+    width: 280px;
+    height: 340px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
     background: var(--color-accent-soft);
+    flex-shrink: 0;
+}
+
+.about-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero-right {
+    display: flex;
+    flex-direction: column;
 }
 
 .about-hero-text {
-    flex: 1;
+    margin-bottom: var(--space-lg);
 }
 
 .about-name {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 400;
     line-height: 1.1;
     margin-bottom: var(--space-sm);
@@ -2550,14 +2560,8 @@ video, img {
 }
 
 /* Intro paragraphs */
-.about-intro {
-    margin-bottom: var(--space-2xl);
-    padding-bottom: var(--space-2xl);
-    border-bottom: 1px solid var(--color-border);
-}
-
 .about-intro p {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     line-height: 1.8;
     color: var(--color-text-secondary);
     margin-bottom: var(--space-md);
@@ -2662,20 +2666,31 @@ video, img {
 }
 
 /* About Page Responsive */
+@media (max-width: 900px) {
+    .about-main {
+        max-width: 600px;
+    }
+
+    .about-hero-card {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .about-photo-card {
+        width: 100%;
+        max-width: 320px;
+        height: 380px;
+    }
+}
+
 @media (max-width: 768px) {
     .about-main {
         padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
     }
 
-    .about-hero-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-md);
-    }
-
-    .about-avatar {
-        width: 80px;
-        height: 80px;
+    .about-photo-card {
+        max-width: 280px;
+        height: 320px;
     }
 
     .about-name {
