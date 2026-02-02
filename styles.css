@@ -271,6 +271,320 @@ img {
     overflow: hidden;
 }
 
+/* =====================================================
+   STICKERS - Draggable Interactive Elements
+   ===================================================== */
+.sticker {
+    position: absolute;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    transform: rotate(var(--rotate, 0deg));
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 3px solid #1C1917;
+    border-radius: 12px;
+    cursor: grab;
+    pointer-events: auto;
+    z-index: 10;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.sticker:hover {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+    z-index: 20;
+}
+
+.sticker.dragging {
+    cursor: grabbing;
+    z-index: 100;
+    transform: rotate(0deg) scale(1.15);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+    transition: none;
+}
+
+.sticker-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.sticker-icon-text {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF0000;
+}
+
+.sticker-icon-svg {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sticker-icon-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sticker-icon-svg.sticker-spotify {
+    color: #1DB954;
+}
+
+/* Sticker Popover - Speech Bubble */
+.sticker-popover {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 2px solid #1C1917;
+    border-radius: 20px;
+    padding: 12px 18px;
+    white-space: nowrap;
+    font-family: 'DM Sans', monospace;
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 30;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Speech bubble tail */
+.sticker-popover::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid white;
+}
+
+.sticker-popover::before {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 14px solid #1C1917;
+}
+
+.sticker:hover .sticker-popover,
+.sticker.active .sticker-popover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.popover-text {
+    color: var(--color-text-secondary);
+}
+
+.popover-cta {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.popover-cta:hover {
+    color: var(--color-text-secondary);
+}
+
+.popover-label {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.popover-cta-modal {
+    text-decoration: underline;
+}
+
+/* =====================================================
+   NOTEBOOK MODAL - Illustration Gallery
+   ===================================================== */
+.notebook-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.notebook-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.notebook-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: var(--space-xl);
+}
+
+.notebook-close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 3px solid #1C1917;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+.notebook-close:hover {
+    transform: scale(1.1);
+}
+
+.notebook-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+}
+
+.polaroid {
+    background: white;
+    padding: 12px 12px 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transform: rotate(var(--rotate, 0deg));
+    transition: transform 0.3s ease;
+}
+
+.polaroid:nth-child(1) { --rotate: -3deg; }
+.polaroid:nth-child(2) { --rotate: 2deg; }
+.polaroid:nth-child(3) { --rotate: 4deg; }
+.polaroid:nth-child(4) { --rotate: -2deg; }
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--color-bg);
+}
+
+.polaroid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.polaroid-caption {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-top: 12px;
+}
+
+/* Stickers Responsive */
+@media (max-width: 768px) {
+    .sticker {
+        width: 48px;
+        height: 48px;
+        border-width: 2px;
+    }
+    
+    .sticker-icon {
+        font-size: 1.5rem;
+    }
+    
+    .sticker-icon-svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .sticker-popover {
+        font-size: 0.8125rem;
+        padding: 10px 14px;
+        border-radius: 16px;
+    }
+    
+    .notebook-gallery {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .polaroid {
+        padding: 8px 8px 30px;
+    }
+    
+    .notebook-close {
+        top: -10px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sticker {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .sticker-icon {
+        font-size: 1.25rem;
+    }
+    
+    /* Reposition stickers for mobile - more centered */
+    .hero-visual .sticker:nth-child(1) { --x: 10%; --y: 15%; }
+    .hero-visual .sticker:nth-child(2) { --x: 80%; --y: 15%; }
+    .hero-visual .sticker:nth-child(3) { --x: 70%; --y: 75%; }
+    .hero-visual .sticker:nth-child(4) { --x: 15%; --y: 75%; }
+    .hero-visual .sticker:nth-child(5) { --x: 50%; --y: 8%; }
+    .hero-visual .sticker:nth-child(6) { --x: 90%; --y: 45%; }
+    .hero-visual .sticker:nth-child(7) { --x: 5%; --y: 45%; }
+    .hero-visual .sticker:nth-child(8) { --x: 60%; --y: 85%; }
+    .hero-visual .sticker:nth-child(9) { --x: 85%; --y: 60%; }
+    .hero-visual .sticker:nth-child(10) { --x: 45%; --y: 45%; }
+    .hero-visual .sticker:nth-child(11) { --x: 25%; --y: 88%; }
+    .hero-visual .sticker:nth-child(12) { --x: 35%; --y: 12%; }
+}
+
 /* Interactive floating shapes */
 .float-shape {
     position: absolute;
