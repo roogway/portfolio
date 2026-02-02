@@ -269,16 +269,7 @@ img {
     inset: 0;
     pointer-events: none;
     overflow: hidden;
-    background: #1C1917;
-    
-    /* Dotted grid pattern */
-    background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
-    background-size: 24px 24px;
-    
-    /* Fade edges with radial gradient mask */
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at center, black 30%, transparent 70%);
-    mask-image: radial-gradient(ellipse 70% 60% at center, black 30%, transparent 70%);
+    z-index: 1;
 }
 
 /* =====================================================
@@ -316,23 +307,12 @@ img {
     max-height: var(--sticker-size, 100px);
     width: auto;
     height: auto;
-    /* White stroke effect using multiple drop shadows */
+    /* Simplified white stroke + shadow */
     filter: 
-        drop-shadow(0 0 0 white)
-        drop-shadow(1px 0 0 white)
-        drop-shadow(-1px 0 0 white)
-        drop-shadow(0 1px 0 white)
-        drop-shadow(0 -1px 0 white)
-        drop-shadow(2px 0 0 white)
-        drop-shadow(-2px 0 0 white)
-        drop-shadow(0 2px 0 white)
-        drop-shadow(0 -2px 0 white)
-        drop-shadow(3px 3px 0 white)
-        drop-shadow(-3px -3px 0 white)
-        drop-shadow(3px -3px 0 white)
-        drop-shadow(-3px 3px 0 white)
-        /* Soft shadow for depth */
-        drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.4));
+        drop-shadow(0 0 2px white)
+        drop-shadow(0 0 2px white)
+        drop-shadow(0 0 3px white)
+        drop-shadow(3px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 /* Size variants */
@@ -353,13 +333,7 @@ img {
     font-size: 2rem;
     font-weight: 700;
     color: #FF0000;
-    filter: 
-        drop-shadow(0 0 0 white)
-        drop-shadow(1px 0 0 white)
-        drop-shadow(-1px 0 0 white)
-        drop-shadow(0 1px 0 white)
-        drop-shadow(0 -1px 0 white)
-        drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
 }
 
 .sticker-icon-svg {
@@ -606,10 +580,6 @@ img {
         font-size: 1.5rem;
     }
     
-    /* Dotted grid - tighter on mobile */
-    .hero-visual {
-        background-size: 20px 20px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -641,11 +611,6 @@ img {
     .hero-visual .sticker:nth-child(10) { --x: 48%; --y: 42%; }
     .hero-visual .sticker:nth-child(11) { --x: 25%; --y: 90%; }
     .hero-visual .sticker:nth-child(12) { --x: 35%; --y: 10%; }
-    
-    /* Smaller grid dots on mobile */
-    .hero-visual {
-        background-size: 16px 16px;
-    }
 }
 
 /* Interactive floating shapes */
