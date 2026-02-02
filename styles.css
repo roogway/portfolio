@@ -2515,6 +2515,7 @@ video, img {
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: var(--space-xl);
+    align-items: start;
     margin-bottom: var(--space-2xl);
     padding-bottom: var(--space-2xl);
     border-bottom: 1px solid var(--color-border);
@@ -2522,7 +2523,7 @@ video, img {
 
 .about-photo-card {
     width: 280px;
-    height: 340px;
+    aspect-ratio: 3 / 4;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--color-accent-soft);
@@ -2538,10 +2539,12 @@ video, img {
 .about-hero-right {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 .about-hero-text {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .about-name {
@@ -2678,8 +2681,7 @@ video, img {
 
     .about-photo-card {
         width: 100%;
-        max-width: 320px;
-        height: 380px;
+        max-width: 280px;
     }
 }
 
@@ -2689,8 +2691,7 @@ video, img {
     }
 
     .about-photo-card {
-        max-width: 280px;
-        height: 320px;
+        max-width: 240px;
     }
 
     .about-name {
