@@ -42,10 +42,16 @@
             </a>
         </div>
         <div class="hero-visual" id="hero-visual">
-            <!-- Draggable Stickers - Add your PNGs to images/ folder -->
+            <!-- Face sticker - behind name, lower z-index -->
+            <div class="sticker sticker--xl sticker-face" style="--x: 48%; --y: 28%; --rotate: 3deg;">
+                <img src="images/sticker-face.png" alt="Raghvi" class="sticker-img">
+                <div class="sticker-popover">
+                    <span class="popover-text">Hey, that's me!</span>
+                </div>
+            </div>
             
-            <!-- 1. Project Aqua -->
-            <div class="sticker sticker--md" style="--x: 8%; --y: 12%; --rotate: -8deg;">
+            <!-- Project Aqua - top left -->
+            <div class="sticker sticker--md" style="--x: 12%; --y: 22%; --rotate: -8deg;">
                 <img src="images/sticker-aqua.png" alt="Project Aqua" class="sticker-img">
                 <div class="sticker-popover">
                     <span class="popover-text">Adobe's first app for kids</span>
@@ -53,8 +59,8 @@
                 </div>
             </div>
             
-            <!-- 2. Pigeon Post -->
-            <div class="sticker sticker--sm" style="--x: 85%; --y: 18%; --rotate: 12deg;">
+            <!-- Pigeon Post - top right -->
+            <div class="sticker sticker--sm" style="--x: 82%; --y: 32%; --rotate: 12deg;">
                 <img src="images/sticker-pigeon.png" alt="Pigeon Post" class="sticker-img">
                 <div class="sticker-popover">
                     <span class="popover-text">Send pixel gifts to friends</span>
@@ -62,26 +68,17 @@
                 </div>
             </div>
             
-            <!-- 3. Adobe -->
-            <div class="sticker sticker--sm" style="--x: 75%; --y: 65%; --rotate: -5deg;">
-                <img src="images/sticker-adobe.png" alt="Adobe" class="sticker-img">
+            <!-- Spotify - upper center -->
+            <div class="sticker sticker--sm" style="--x: 38%; --y: 25%; --rotate: 8deg;">
+                <img src="images/sticker-spotify.png" alt="Spotify" class="sticker-img">
                 <div class="sticker-popover">
-                    <span class="popover-text">I'm a designer at</span>
-                    <a href="https://adobe.com" target="_blank" class="popover-cta">Adobe</a>
+                    <span class="popover-text">What I'm listening to</span>
+                    <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M" target="_blank" class="popover-cta">My Playlist</a>
                 </div>
             </div>
             
-            <!-- 4. San Francisco -->
-            <div class="sticker sticker--md" style="--x: 15%; --y: 70%; --rotate: 6deg;">
-                <img src="images/sticker-sf.png" alt="San Francisco" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Currently based in</span>
-                    <span class="popover-label">San Francisco</span>
-                </div>
-            </div>
-            
-            <!-- 5. Delhi -->
-            <div class="sticker sticker--md" style="--x: 60%; --y: 8%; --rotate: -3deg;">
+            <!-- Delhi - upper right of name -->
+            <div class="sticker sticker--md" style="--x: 58%; --y: 20%; --rotate: -3deg;">
                 <img src="images/sticker-delhi.png" alt="Delhi" class="sticker-img">
                 <div class="sticker-popover">
                     <span class="popover-text">Originally from</span>
@@ -89,8 +86,8 @@
                 </div>
             </div>
             
-            <!-- 7. Coffee -->
-            <div class="sticker sticker--sm" style="--x: 5%; --y: 45%; --rotate: -10deg;">
+            <!-- Coffee - left side -->
+            <div class="sticker sticker--sm" style="--x: 8%; --y: 48%; --rotate: -10deg;">
                 <img src="images/sticker-coffee.png" alt="Coffee" class="sticker-img">
                 <div class="sticker-popover">
                     <span class="popover-text">Runs on caffeine</span>
@@ -98,38 +95,39 @@
                 </div>
             </div>
             
-            <!-- 8. LinkedIn -->
-            <div class="sticker sticker--sm" style="--x: 70%; --y: 85%; --rotate: 8deg;">
-                <img src="images/sticker-linkedin.png" alt="LinkedIn" class="sticker-img">
+            <!-- SF - bottom left -->
+            <div class="sticker sticker--md" style="--x: 15%; --y: 68%; --rotate: 6deg;">
+                <img src="images/sticker-sf.png" alt="San Francisco" class="sticker-img">
+                <div class="sticker-popover popover-below">
+                    <span class="popover-text">Currently based in</span>
+                    <span class="popover-label">San Francisco</span>
+                </div>
+            </div>
+            
+            <!-- Adobe - right side -->
+            <div class="sticker sticker--sm" style="--x: 85%; --y: 52%; --rotate: -5deg;">
+                <img src="images/sticker-adobe.png" alt="Adobe" class="sticker-img">
                 <div class="sticker-popover">
+                    <span class="popover-text">I'm a designer at</span>
+                    <a href="https://adobe.com" target="_blank" class="popover-cta">Adobe</a>
+                </div>
+            </div>
+            
+            <!-- LinkedIn - bottom right -->
+            <div class="sticker sticker--sm" style="--x: 72%; --y: 62%; --rotate: 8deg;">
+                <img src="images/sticker-linkedin.png" alt="LinkedIn" class="sticker-img">
+                <div class="sticker-popover popover-below">
                     <span class="popover-text">Find me on</span>
                     <a href="https://linkedin.com/in/raghvikabra" target="_blank" class="popover-cta">LinkedIn</a>
                 </div>
             </div>
             
-            <!-- 9. Email -->
-            <div class="sticker sticker--sm" style="--x: 82%; --y: 75%; --rotate: -6deg;">
+            <!-- Email - right side lower -->
+            <div class="sticker sticker--sm" style="--x: 88%; --y: 68%; --rotate: -6deg;">
                 <img src="images/sticker-email.png" alt="Email" class="sticker-img">
-                <div class="sticker-popover">
+                <div class="sticker-popover popover-below">
                     <span class="popover-text">Say hello at</span>
                     <a href="mailto:kabra.raghvi@gmail.com" class="popover-cta">kabra.raghvi@gmail.com</a>
-                </div>
-            </div>
-            
-            <!-- 10. Face -->
-            <div class="sticker sticker--lg" style="--x: 50%; --y: 50%; --rotate: 4deg;">
-                <img src="images/sticker-face.png" alt="Raghvi" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Hey, that's me!</span>
-                </div>
-            </div>
-            
-            <!-- 12. Spotify -->
-            <div class="sticker sticker--sm" style="--x: 40%; --y: 15%; --rotate: 10deg;">
-                <img src="images/sticker-spotify.png" alt="Spotify" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">What I'm listening to</span>
-                    <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M" target="_blank" class="popover-cta">My Playlist</a>
                 </div>
             </div>
         </div>

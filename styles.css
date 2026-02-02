@@ -271,26 +271,29 @@ img {
     overflow: hidden;
     z-index: 1;
     
-    /* Dreamy gradient background - pink/magenta to peach/orange */
+    /* Premium gradient - soft overlapping blobs like Leonard Agency */
     background: 
-        radial-gradient(ellipse 80% 70% at 55% 40%, 
-            rgba(219, 39, 119, 0.5) 0%, 
-            rgba(244, 114, 182, 0.4) 25%,
-            rgba(251, 146, 60, 0.3) 50%,
-            rgba(254, 215, 170, 0.2) 70%,
-            transparent 100%),
-        #FAF5F0;
-}
-
-/* Grain texture overlay */
-.hero-visual::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.3;
-    mix-blend-mode: overlay;
-    pointer-events: none;
+        /* Warm orange/coral blob - top right */
+        radial-gradient(ellipse 60% 50% at 85% 20%, 
+            rgba(255, 120, 80, 0.5) 0%, 
+            rgba(255, 150, 100, 0.3) 40%,
+            transparent 70%),
+        /* Soft pink blob - center */
+        radial-gradient(ellipse 70% 60% at 50% 50%, 
+            rgba(255, 180, 200, 0.35) 0%, 
+            rgba(255, 200, 210, 0.2) 50%,
+            transparent 80%),
+        /* Cool blue-gray blob - left */
+        radial-gradient(ellipse 50% 70% at 15% 60%, 
+            rgba(180, 190, 220, 0.4) 0%, 
+            rgba(200, 210, 230, 0.2) 50%,
+            transparent 70%),
+        /* Subtle lavender blob - bottom */
+        radial-gradient(ellipse 80% 40% at 60% 90%, 
+            rgba(220, 200, 240, 0.25) 0%, 
+            transparent 60%),
+        /* Base cream */
+        #FAF7F5;
 }
 
 /* =====================================================
@@ -334,7 +337,15 @@ img {
 .sticker--sm { --sticker-size: 60px; }
 .sticker--md { --sticker-size: 100px; }
 .sticker--lg { --sticker-size: 140px; }
-.sticker--xl { --sticker-size: 180px; }
+.sticker--xl { --sticker-size: 200px; }
+
+/* Face sticker - appears behind text */
+.sticker-face {
+    z-index: 1;
+}
+.sticker-face:hover {
+    z-index: 2;
+}
 
 /* Emoji icon support (temporary placeholders) */
 .sticker-icon {
@@ -443,6 +454,26 @@ img {
 .popover-label {
     color: var(--color-text);
     font-weight: 500;
+}
+
+/* Popover below variant - for stickers near bottom */
+.popover-below {
+    bottom: auto;
+    top: calc(100% + 16px);
+}
+
+.popover-below::after {
+    bottom: auto;
+    top: -12px;
+    border-top: none;
+    border-bottom: 12px solid white;
+}
+
+.popover-below::before {
+    bottom: auto;
+    top: -16px;
+    border-top: none;
+    border-bottom: 14px solid #1C1917;
 }
 
 .popover-cta-modal {
