@@ -269,65 +269,112 @@ img {
     inset: 0;
     pointer-events: none;
     overflow: hidden;
+    background: #1C1917;
+    
+    /* Dotted grid pattern */
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+    
+    /* Fade edges with radial gradient mask */
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at center, black 30%, transparent 70%);
+    mask-image: radial-gradient(ellipse 70% 60% at center, black 30%, transparent 70%);
 }
 
 /* =====================================================
-   STICKERS - Draggable Interactive Elements
+   STICKERS - Photo Cutout Style
    ===================================================== */
 .sticker {
     position: absolute;
     left: var(--x, 50%);
     top: var(--y, 50%);
     transform: rotate(var(--rotate, 0deg));
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border: 3px solid #1C1917;
-    border-radius: 12px;
     cursor: grab;
     pointer-events: auto;
     z-index: 10;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, filter 0.2s ease;
     user-select: none;
     -webkit-user-select: none;
 }
 
 .sticker:hover {
-    transform: rotate(0deg) scale(1.1);
-    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: rotate(0deg) scale(1.08);
     z-index: 20;
 }
 
 .sticker.dragging {
     cursor: grabbing;
     z-index: 100;
-    transform: rotate(0deg) scale(1.15);
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+    transform: rotate(0deg) scale(1.12);
     transition: none;
 }
 
+/* Sticker image with white stroke and shadow */
+.sticker-img {
+    display: block;
+    max-width: var(--sticker-size, 100px);
+    max-height: var(--sticker-size, 100px);
+    width: auto;
+    height: auto;
+    /* White stroke effect using multiple drop shadows */
+    filter: 
+        drop-shadow(0 0 0 white)
+        drop-shadow(1px 0 0 white)
+        drop-shadow(-1px 0 0 white)
+        drop-shadow(0 1px 0 white)
+        drop-shadow(0 -1px 0 white)
+        drop-shadow(2px 0 0 white)
+        drop-shadow(-2px 0 0 white)
+        drop-shadow(0 2px 0 white)
+        drop-shadow(0 -2px 0 white)
+        drop-shadow(3px 3px 0 white)
+        drop-shadow(-3px -3px 0 white)
+        drop-shadow(3px -3px 0 white)
+        drop-shadow(-3px 3px 0 white)
+        /* Soft shadow for depth */
+        drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Size variants */
+.sticker--sm { --sticker-size: 60px; }
+.sticker--md { --sticker-size: 100px; }
+.sticker--lg { --sticker-size: 140px; }
+.sticker--xl { --sticker-size: 180px; }
+
+/* Legacy emoji icon support (fallback) */
 .sticker-icon {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     line-height: 1;
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
 }
 
 .sticker-icon-text {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #FF0000;
+    filter: 
+        drop-shadow(0 0 0 white)
+        drop-shadow(1px 0 0 white)
+        drop-shadow(-1px 0 0 white)
+        drop-shadow(0 1px 0 white)
+        drop-shadow(0 -1px 0 white)
+        drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
 }
 
 .sticker-icon-svg {
-    width: 28px;
-    height: 28px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: 
+        drop-shadow(0 0 0 white)
+        drop-shadow(1px 0 0 white)
+        drop-shadow(-1px 0 0 white)
+        drop-shadow(0 1px 0 white)
+        drop-shadow(0 -1px 0 white)
+        drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.3));
 }
 
 .sticker-icon-svg svg {
@@ -521,19 +568,19 @@ img {
 
 /* Stickers Responsive */
 @media (max-width: 768px) {
-    .sticker {
-        width: 48px;
-        height: 48px;
-        border-width: 2px;
-    }
+    /* Scale down sticker sizes on tablet */
+    .sticker--sm { --sticker-size: 50px; }
+    .sticker--md { --sticker-size: 80px; }
+    .sticker--lg { --sticker-size: 110px; }
+    .sticker--xl { --sticker-size: 140px; }
     
     .sticker-icon {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     
     .sticker-icon-svg {
-        width: 24px;
-        height: 24px;
+        width: 36px;
+        height: 36px;
     }
     
     .sticker-popover {
@@ -558,31 +605,47 @@ img {
         height: 40px;
         font-size: 1.5rem;
     }
+    
+    /* Dotted grid - tighter on mobile */
+    .hero-visual {
+        background-size: 20px 20px;
+    }
 }
 
 @media (max-width: 480px) {
-    .sticker {
-        width: 44px;
-        height: 44px;
-    }
+    /* Even smaller stickers on mobile */
+    .sticker--sm { --sticker-size: 40px; }
+    .sticker--md { --sticker-size: 60px; }
+    .sticker--lg { --sticker-size: 90px; }
+    .sticker--xl { --sticker-size: 120px; }
     
     .sticker-icon {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     
-    /* Reposition stickers for mobile - more centered */
-    .hero-visual .sticker:nth-child(1) { --x: 10%; --y: 15%; }
-    .hero-visual .sticker:nth-child(2) { --x: 80%; --y: 15%; }
-    .hero-visual .sticker:nth-child(3) { --x: 70%; --y: 75%; }
-    .hero-visual .sticker:nth-child(4) { --x: 15%; --y: 75%; }
-    .hero-visual .sticker:nth-child(5) { --x: 50%; --y: 8%; }
-    .hero-visual .sticker:nth-child(6) { --x: 90%; --y: 45%; }
+    .sticker-icon-svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    /* Reposition stickers for mobile - avoid text overlap */
+    .hero-visual .sticker:nth-child(1) { --x: 10%; --y: 12%; }
+    .hero-visual .sticker:nth-child(2) { --x: 80%; --y: 12%; }
+    .hero-visual .sticker:nth-child(3) { --x: 70%; --y: 78%; }
+    .hero-visual .sticker:nth-child(4) { --x: 12%; --y: 78%; }
+    .hero-visual .sticker:nth-child(5) { --x: 50%; --y: 5%; }
+    .hero-visual .sticker:nth-child(6) { --x: 88%; --y: 45%; }
     .hero-visual .sticker:nth-child(7) { --x: 5%; --y: 45%; }
-    .hero-visual .sticker:nth-child(8) { --x: 60%; --y: 85%; }
-    .hero-visual .sticker:nth-child(9) { --x: 85%; --y: 60%; }
-    .hero-visual .sticker:nth-child(10) { --x: 45%; --y: 45%; }
-    .hero-visual .sticker:nth-child(11) { --x: 25%; --y: 88%; }
-    .hero-visual .sticker:nth-child(12) { --x: 35%; --y: 12%; }
+    .hero-visual .sticker:nth-child(8) { --x: 60%; --y: 88%; }
+    .hero-visual .sticker:nth-child(9) { --x: 85%; --y: 62%; }
+    .hero-visual .sticker:nth-child(10) { --x: 48%; --y: 42%; }
+    .hero-visual .sticker:nth-child(11) { --x: 25%; --y: 90%; }
+    .hero-visual .sticker:nth-child(12) { --x: 35%; --y: 10%; }
+    
+    /* Smaller grid dots on mobile */
+    .hero-visual {
+        background-size: 16px 16px;
+    }
 }
 
 /* Interactive floating shapes */
