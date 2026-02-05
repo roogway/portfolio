@@ -282,8 +282,25 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     width: clamp(280px, 60vw, 700px);
     height: auto;
     margin-bottom: var(--space-md);
-    animation: fadeUp 0.8s ease forwards;
+    animation: nameReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     opacity: 0;
+}
+
+@keyframes nameReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        filter: blur(4px);
+    }
+    60% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
 }
 
 .hero-meta {
@@ -393,13 +410,13 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         transform: translate(0, 0) scale(1);
     }
     25% {
-        transform: translate(30px, 20px) scale(1.05);
+        transform: translate(60px, 40px) scale(1.1);
     }
     50% {
-        transform: translate(10px, 40px) scale(0.95);
+        transform: translate(20px, 80px) scale(0.9);
     }
     75% {
-        transform: translate(-20px, 15px) scale(1.02);
+        transform: translate(-40px, 30px) scale(1.05);
     }
 }
 
@@ -408,10 +425,10 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         transform: translate(0, 0) scale(1);
     }
     33% {
-        transform: translate(-25px, 30px) scale(1.08);
+        transform: translate(-50px, 60px) scale(1.15);
     }
     66% {
-        transform: translate(20px, -20px) scale(0.92);
+        transform: translate(40px, -40px) scale(0.85);
     }
 }
 
@@ -420,16 +437,16 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         transform: translate(0, 0) scale(1);
     }
     20% {
-        transform: translate(40px, -10px) scale(1.03);
+        transform: translate(80px, -20px) scale(1.08);
     }
     40% {
-        transform: translate(25px, 25px) scale(0.97);
+        transform: translate(50px, 50px) scale(0.92);
     }
     60% {
-        transform: translate(-15px, 35px) scale(1.05);
+        transform: translate(-30px, 70px) scale(1.1);
     }
     80% {
-        transform: translate(-30px, 10px) scale(0.98);
+        transform: translate(-60px, 20px) scale(0.95);
     }
 }
 
