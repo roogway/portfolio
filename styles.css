@@ -145,6 +145,12 @@ img {
     gap: 0.15em;
 }
 
+.nav-logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
 /* Homepage nav - light text over dark hero */
 .nav:not(.scrolled) .nav-logo,
 .nav:not(.scrolled) .nav-link {
@@ -561,9 +567,9 @@ img {
    ===================================================== */
 .logos {
     padding: var(--space-lg) 0;
-    background: linear-gradient(to bottom, #1a1a2e 0%, #1a1a2e 60%, var(--color-bg) 100%);
+    background: #1a1a2e;
     border-top: none;
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     overflow: hidden;
 }
 
