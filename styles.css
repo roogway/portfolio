@@ -2815,7 +2815,7 @@ video, img {
 /* Hero - Photo card layout */
 .about-hero-card {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 320px 1fr;
     gap: var(--space-xl);
     align-items: start;
     margin-bottom: var(--space-2xl);
@@ -2824,8 +2824,8 @@ video, img {
 }
 
 .about-photo-card {
-    width: 280px;
-    aspect-ratio: 3 / 4;
+    width: 320px;
+    aspect-ratio: 4 / 5;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--color-accent-soft);
@@ -2983,7 +2983,7 @@ video, img {
 
     .about-photo-card {
         width: 100%;
-        max-width: 280px;
+        max-width: 300px;
     }
 }
 
@@ -2993,7 +2993,7 @@ video, img {
     }
 
     .about-photo-card {
-        max-width: 240px;
+        max-width: 260px;
     }
 
     .about-name {
