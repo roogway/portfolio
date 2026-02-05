@@ -256,6 +256,16 @@ img {
     color: #E8DDD4; /* Warm cream for dark bg */
 }
 
+/* Exported name image with texture */
+.hero-name-img {
+    max-width: 90%;
+    width: clamp(280px, 60vw, 700px);
+    height: auto;
+    margin-bottom: var(--space-md);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+}
+
 .hero-meta {
     animation: fadeUp 0.8s ease 0.1s forwards;
     opacity: 0;
@@ -311,35 +321,33 @@ img {
     overflow: hidden;
     z-index: 1;
     
-    /* Dark purple/blue gradient like reference */
-    background: 
-        /* Purple glow - top left */
-        radial-gradient(ellipse 80% 60% at 10% 20%, 
-            rgba(120, 60, 150, 0.8) 0%, 
-            rgba(80, 40, 120, 0.4) 40%,
-            transparent 70%),
-        /* Deep blue base - center right */
-        radial-gradient(ellipse 100% 80% at 70% 60%, 
-            rgba(30, 50, 80, 0.9) 0%, 
-            rgba(20, 35, 60, 0.6) 50%,
-            transparent 90%),
-        /* Teal accent - bottom */
-        radial-gradient(ellipse 60% 40% at 50% 100%, 
-            rgba(40, 80, 100, 0.5) 0%, 
-            transparent 70%),
-        /* Base dark blue */
-        #1a1a2e;
+    /* Use exported Figma background */
+    background: url('images/hero-bg.png') center center / cover no-repeat;
+    background-color: #1a1a2e; /* fallback */
 }
 
-/* Grid overlay */
+/* Perspective grid overlay */
 .hero-visual::before {
     content: '';
     position: absolute;
-    inset: 0;
+    left: -50%;
+    right: -50%;
+    bottom: 0;
+    height: 70%;
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform-origin: center bottom;
+    transform: perspective(400px) rotateX(65deg);
+    mask-image: 
+        linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 80%),
+        linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-image: 
+        linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 80%),
+        linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask-composite: source-in;
     mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
 }
@@ -553,8 +561,9 @@ img {
    ===================================================== */
 .logos {
     padding: var(--space-lg) 0;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
+    background: linear-gradient(to bottom, #1a1a2e 0%, #1a1a2e 60%, var(--color-bg) 100%);
+    border-top: none;
+    border-bottom: none;
     overflow: hidden;
 }
 
@@ -568,14 +577,14 @@ img {
 .logo-item {
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-text-secondary);
+    color: rgba(232, 221, 212, 0.7); /* Light cream for dark bg */
     white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .logo-divider {
-    color: var(--color-text-muted);
+    color: rgba(232, 221, 212, 0.4);
 }
 
 /* =====================================================
@@ -2509,16 +2518,10 @@ img {
         font-size: 0.875rem;
     }
     
-    /* Adjust gradient for mobile - more centered */
+    /* Use same exported background on mobile */
     .hero-visual {
-        background: 
-            radial-gradient(ellipse 100% 60% at 20% 30%, 
-                rgba(120, 60, 150, 0.7) 0%, 
-                transparent 60%),
-            radial-gradient(ellipse 80% 60% at 80% 70%, 
-                rgba(30, 50, 80, 0.8) 0%, 
-                transparent 70%),
-            #1a1a2e;
+        background: url('images/hero-bg.png') center center / cover no-repeat;
+        background-color: #1a1a2e;
     }
     
     /* Marquee - smaller text on mobile */
