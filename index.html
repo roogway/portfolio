@@ -28,106 +28,57 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-visual"></div>
         <div class="hero-content">
             <h1 class="hero-name">Raghvi Kabra</h1>
             <div class="hero-meta">
                 <p class="hero-title">Founding Designer</p>
                 <p class="hero-subtitle">Leading 0→1 product design at Adobe</p>
             </div>
-            <a href="#work" class="hero-cta">
-                <span>View Work</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </a>
-        </div>
-        <div class="hero-visual" id="hero-visual">
-            <!-- Face sticker - above name, behind text -->
-            <div class="sticker sticker--xl sticker-face" style="--x: 46%; --y: 18%; --rotate: 2deg;">
-                <img src="images/sticker-face.png" alt="Raghvi" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Hey, that's me!</span>
-                </div>
-            </div>
             
-            <!-- Project Aqua - top left -->
-            <div class="sticker sticker--md" style="--x: 14%; --y: 28%; --rotate: -8deg;">
-                <img src="images/sticker-aqua.png" alt="Project Aqua" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Adobe's first app for kids</span>
-                    <a href="https://apps.apple.com/us/app/project-aqua-adobe-for-kids/id6751648936" target="_blank" class="popover-cta">Download on App Store</a>
+            <!-- Sticker Dock -->
+            <div class="sticker-dock">
+                <div class="dock-sticker">
+                    <img src="images/sticker-pigeon.png" alt="Pigeon Post">
+                    <div class="dock-tooltip">
+                        <span>Send pixel gifts to friends</span>
+                        <a href="https://pigeonpost.fun" target="_blank">Try Pigeon Post</a>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Spotify - upper left of center -->
-            <div class="sticker sticker--sm" style="--x: 32%; --y: 28%; --rotate: 5deg;">
-                <img src="images/sticker-spotify.png" alt="Spotify" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">What I'm listening to</span>
-                    <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M" target="_blank" class="popover-cta">My Playlist</a>
+                <div class="dock-sticker">
+                    <img src="images/sticker-coffee.png" alt="Coffee">
+                    <div class="dock-tooltip">
+                        <span>Runs on caffeine</span>
+                        <a href="mailto:kabra.raghvi@gmail.com?subject=Coffee%20chat?">Have a coffee chat?</a>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Delhi - upper right -->
-            <div class="sticker sticker--md" style="--x: 72%; --y: 22%; --rotate: -3deg;">
-                <img src="images/sticker-delhi.png" alt="Delhi" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Originally from</span>
-                    <span class="popover-label">Delhi, India</span>
+                <div class="dock-sticker">
+                    <img src="images/sticker-adobe.png" alt="Adobe">
+                    <div class="dock-tooltip">
+                        <span>I'm a designer at</span>
+                        <a href="https://adobe.com" target="_blank">Adobe</a>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Pigeon Post - right side -->
-            <div class="sticker sticker--sm" style="--x: 85%; --y: 35%; --rotate: 10deg;">
-                <img src="images/sticker-pigeon.png" alt="Pigeon Post" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Send pixel gifts to friends</span>
-                    <a href="https://pigeonpost.fun" target="_blank" class="popover-cta">Try Pigeon Post</a>
+                <div class="dock-sticker">
+                    <img src="images/sticker-sf.png" alt="San Francisco">
+                    <div class="dock-tooltip">
+                        <span>Currently based in</span>
+                        <strong>San Francisco</strong>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Coffee - left side -->
-            <div class="sticker sticker--sm" style="--x: 6%; --y: 52%; --rotate: -12deg;">
-                <img src="images/sticker-coffee.png" alt="Coffee" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Runs on caffeine</span>
-                    <a href="mailto:kabra.raghvi@gmail.com?subject=Coffee%20chat?" target="_blank" class="popover-cta">Have a coffee chat?</a>
+                <div class="dock-sticker">
+                    <img src="images/sticker-aqua.png" alt="Project Aqua">
+                    <div class="dock-tooltip">
+                        <span>Adobe's first app for kids</span>
+                        <a href="https://apps.apple.com/us/app/project-aqua-adobe-for-kids/id6751648936" target="_blank">Download on App Store</a>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- SF - bottom left -->
-            <div class="sticker sticker--md" style="--x: 10%; --y: 72%; --rotate: 6deg;">
-                <img src="images/sticker-sf.png" alt="San Francisco" class="sticker-img">
-                <div class="sticker-popover popover-below">
-                    <span class="popover-text">Currently based in</span>
-                    <span class="popover-label">San Francisco</span>
-                </div>
-            </div>
-            
-            <!-- Adobe - right side -->
-            <div class="sticker sticker--sm" style="--x: 86%; --y: 50%; --rotate: -5deg;">
-                <img src="images/sticker-adobe.png" alt="Adobe" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">I'm a designer at</span>
-                    <a href="https://adobe.com" target="_blank" class="popover-cta">Adobe</a>
-                </div>
-            </div>
-            
-            <!-- Email - right side -->
-            <div class="sticker sticker--sm" style="--x: 88%; --y: 62%; --rotate: -4deg;">
-                <img src="images/sticker-email.png" alt="Email" class="sticker-img">
-                <div class="sticker-popover">
-                    <span class="popover-text">Say hello at</span>
-                    <a href="mailto:kabra.raghvi@gmail.com" class="popover-cta">kabra.raghvi@gmail.com</a>
-                </div>
-            </div>
-            
-            <!-- LinkedIn - bottom center-right -->
-            <div class="sticker sticker--sm" style="--x: 62%; --y: 70%; --rotate: 8deg;">
-                <img src="images/sticker-linkedin.png" alt="LinkedIn" class="sticker-img">
-                <div class="sticker-popover popover-below">
-                    <span class="popover-text">Find me on</span>
-                    <a href="https://linkedin.com/in/raghvikabra" target="_blank" class="popover-cta">LinkedIn</a>
+                <div class="dock-sticker">
+                    <img src="images/sticker-email.png" alt="Email">
+                    <div class="dock-tooltip">
+                        <span>Say hello</span>
+                        <a href="mailto:kabra.raghvi@gmail.com">kabra.raghvi@gmail.com</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -377,39 +328,6 @@
             <p>© 2026 Raghvi Kabra · San Francisco</p>
         </div>
     </footer>
-
-    <!-- Notebook Modal -->
-    <div class="notebook-modal" id="notebook-modal">
-        <div class="notebook-modal-content">
-            <button class="notebook-close" aria-label="Close gallery">&times;</button>
-            <div class="notebook-gallery">
-                <div class="polaroid">
-                    <div class="polaroid-image">
-                        <img src="https://placehold.co/400x400/E8FBF9/1C1917?text=Illustration+1" alt="Illustration 1">
-                    </div>
-                    <p class="polaroid-caption">Illustration 1</p>
-                </div>
-                <div class="polaroid">
-                    <div class="polaroid-image">
-                        <img src="https://placehold.co/400x400/FFE8F7/1C1917?text=Illustration+2" alt="Illustration 2">
-                    </div>
-                    <p class="polaroid-caption">Illustration 2</p>
-                </div>
-                <div class="polaroid">
-                    <div class="polaroid-image">
-                        <img src="https://placehold.co/400x400/F3F0FF/1C1917?text=Illustration+3" alt="Illustration 3">
-                    </div>
-                    <p class="polaroid-caption">Illustration 3</p>
-                </div>
-                <div class="polaroid">
-                    <div class="polaroid-image">
-                        <img src="https://placehold.co/400x400/E8F5E9/1C1917?text=Illustration+4" alt="Illustration 4">
-                    </div>
-                    <p class="polaroid-caption">Illustration 4</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="main.js"></script>
 </body>

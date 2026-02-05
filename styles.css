@@ -309,99 +309,56 @@ img {
 }
 
 /* =====================================================
-   STICKERS - Photo Cutout Style
+   STICKER DOCK - Horizontal row at bottom of hero
    ===================================================== */
-.sticker {
-    position: absolute;
-    left: var(--x, 50%);
-    top: var(--y, 50%);
-    transform: rotate(var(--rotate, 0deg));
-    cursor: grab;
-    pointer-events: auto;
-    z-index: 10;
-    transition: transform 0.15s ease;
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-.sticker:hover {
-    transform: rotate(0deg) scale(1.05);
-    z-index: 20;
-}
-
-.sticker.dragging {
-    cursor: grabbing;
-    z-index: 100;
-    transform: rotate(0deg) scale(1.08);
-    transition: none;
-}
-
-/* Sticker image - clean, no effects (borders baked into PNG) */
-.sticker-img {
-    display: block;
-    max-width: var(--sticker-size, 100px);
-    max-height: var(--sticker-size, 100px);
-    width: auto;
-    height: auto;
-}
-
-/* Size variants */
-.sticker--sm { --sticker-size: 60px; }
-.sticker--md { --sticker-size: 100px; }
-.sticker--lg { --sticker-size: 140px; }
-.sticker--xl { --sticker-size: 200px; }
-
-/* Face sticker - appears behind text */
-.sticker-face {
-    z-index: 1;
-}
-.sticker-face:hover {
-    z-index: 2;
-}
-
-/* Emoji icon support (temporary placeholders) */
-.sticker-icon {
-    font-size: 2.5rem;
-    line-height: 1;
-}
-
-.sticker-icon-text {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: #FF0000;
-}
-
-.sticker-icon-svg {
-    width: 48px;
-    height: 48px;
+.sticker-dock {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-xl);
+    padding: var(--space-sm) 0;
 }
 
-.sticker-icon-svg svg {
-    width: 100%;
-    height: 100%;
+.dock-sticker {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.sticker-icon-svg.sticker-spotify {
-    color: #1DB954;
+.dock-sticker img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
 }
 
-/* Sticker Popover - Clean Speech Bubble */
-.sticker-popover {
+/* Hover effect - pop up, rotate, scale */
+.dock-sticker:hover {
+    transform: translateY(-8px);
+}
+
+.dock-sticker:hover img {
+    transform: rotate(-8deg) scale(1.15);
+}
+
+/* Alternate rotation for variety */
+.dock-sticker:nth-child(even):hover img {
+    transform: rotate(8deg) scale(1.15);
+}
+
+/* Tooltip */
+.dock-tooltip {
     position: absolute;
-    bottom: calc(100% + 8px);
+    bottom: calc(100% + 16px);
     left: 50%;
     transform: translateX(-50%);
     background: white;
-    border: 2px solid #1C1917;
-    border-radius: 16px;
-    padding: 10px 16px;
+    border: 2px solid var(--color-text);
+    border-radius: 12px;
+    padding: 10px 14px;
     white-space: nowrap;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -409,272 +366,99 @@ img {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.2s ease 0.1s, visibility 0.2s ease 0.1s;
-    z-index: 30;
+    transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+    z-index: 100;
 }
 
-/* Invisible bridge to maintain hover when moving to popover */
-.sticker-popover::after {
+/* Tooltip tail */
+.dock-tooltip::before {
     content: '';
     position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 20px;
-    background: transparent;
-}
-
-/* Speech bubble tail - visual only */
-.sticker-popover::before {
-    content: '';
-    position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 10px solid #1C1917;
-    z-index: 1;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--color-text);
 }
 
-.sticker:hover .sticker-popover,
-.sticker.active .sticker-popover,
-.sticker-popover:hover {
+.dock-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid white;
+}
+
+/* Show tooltip on hover */
+.dock-sticker:hover .dock-tooltip,
+.dock-sticker.active .dock-tooltip {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition-delay: 0s;
 }
 
-.popover-text {
+.dock-tooltip span {
     color: var(--color-text-secondary);
 }
 
-.popover-cta {
+.dock-tooltip strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.dock-tooltip a {
     color: var(--color-text);
     text-decoration: underline;
     text-underline-offset: 2px;
-    cursor: pointer;
-    transition: color 0.15s ease;
 }
 
-.popover-cta:hover {
+.dock-tooltip a:hover {
     color: var(--color-text-secondary);
 }
 
-.popover-label {
-    color: var(--color-text);
-    font-weight: 500;
-}
-
-/* Popover below variant - for stickers near bottom */
-.popover-below {
-    bottom: auto;
-    top: calc(100% + 8px);
-}
-
-/* Invisible bridge for below popover */
-.popover-below::after {
-    bottom: auto;
-    top: -20px;
-    border: none;
-    width: 60px;
-    height: 20px;
-}
-
-/* Tail for below popover */
-.popover-below::before {
-    bottom: auto;
-    top: -10px;
-    border-top: none;
-    border-bottom: 10px solid #1C1917;
-}
-
-.popover-cta-modal {
-    text-decoration: underline;
-}
-
-/* =====================================================
-   NOTEBOOK MODAL - Illustration Gallery
-   ===================================================== */
-.notebook-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.notebook-modal.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-.notebook-modal-content {
-    position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
-    padding: var(--space-xl);
-}
-
-.notebook-close {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 48px;
-    height: 48px;
-    background: white;
-    border: 3px solid #1C1917;
-    border-radius: 50%;
-    font-size: 1.75rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-    z-index: 10;
-}
-
-.notebook-close:hover {
-    transform: scale(1.1);
-}
-
-.notebook-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-}
-
-.polaroid {
-    background: white;
-    padding: 12px 12px 40px;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transform: rotate(var(--rotate, 0deg));
-    transition: transform 0.3s ease;
-}
-
-.polaroid:nth-child(1) { --rotate: -3deg; }
-.polaroid:nth-child(2) { --rotate: 2deg; }
-.polaroid:nth-child(3) { --rotate: 4deg; }
-.polaroid:nth-child(4) { --rotate: -2deg; }
-
-.polaroid:hover {
-    transform: rotate(0deg) scale(1.02);
-}
-
-.polaroid-image {
-    aspect-ratio: 1;
-    overflow: hidden;
-    background: var(--color-bg);
-}
-
-.polaroid-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.polaroid-caption {
-    text-align: center;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    margin-top: 12px;
-}
-
-/* Stickers Responsive */
+/* Sticker Dock Responsive */
 @media (max-width: 768px) {
-    /* Scale down sticker sizes on tablet */
-    .sticker--sm { --sticker-size: 50px; }
-    .sticker--md { --sticker-size: 80px; }
-    .sticker--lg { --sticker-size: 110px; }
-    .sticker--xl { --sticker-size: 140px; }
-    
-    .sticker-icon {
-        font-size: 1.75rem;
+    .sticker-dock {
+        gap: 0.75rem;
     }
     
-    .sticker-icon-svg {
+    .dock-sticker img {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .dock-tooltip {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sticker-dock {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .dock-sticker img {
         width: 36px;
         height: 36px;
     }
     
-    .sticker-popover {
-        font-size: 0.8125rem;
-        padding: 10px 14px;
-        border-radius: 16px;
-    }
-    
-    .notebook-gallery {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-    }
-    
-    .polaroid {
-        padding: 8px 8px 30px;
-    }
-    
-    .notebook-close {
-        top: -10px;
-        right: -10px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-    
-}
-
-@media (max-width: 480px) {
-    /* Hide most stickers on mobile - keep only face and 3 others */
-    .hero-visual .sticker {
-        display: none;
-    }
-    
-    /* Show only: face (1), aqua (2), spotify (4), linkedin (8) */
-    .hero-visual .sticker:nth-child(1),
-    .hero-visual .sticker:nth-child(2),
-    .hero-visual .sticker:nth-child(4),
-    .hero-visual .sticker:nth-child(8) {
-        display: block;
-    }
-    
-    /* Smaller stickers on mobile */
-    .sticker--sm { --sticker-size: 36px; }
-    .sticker--md { --sticker-size: 50px; }
-    .sticker--lg { --sticker-size: 70px; }
-    .sticker--xl { --sticker-size: 100px; }
-    
-    /* Reposition visible stickers for mobile */
-    .hero-visual .sticker:nth-child(1) { --x: 50%; --y: 12%; } /* Face - top center */
-    .hero-visual .sticker:nth-child(2) { --x: 8%; --y: 30%; }  /* Aqua - left */
-    .hero-visual .sticker:nth-child(4) { --x: 85%; --y: 25%; } /* Spotify - right */
-    .hero-visual .sticker:nth-child(8) { --x: 80%; --y: 75%; } /* LinkedIn - bottom right */
-    
-    .sticker-icon {
-        font-size: 1.25rem;
-    }
-    
-    .sticker-icon-svg {
-        width: 24px;
-        height: 24px;
-    }
-    
-    /* Smaller popovers on mobile */
-    .sticker-popover {
-        font-size: 0.75rem;
-        padding: 8px 12px;
-        border-radius: 12px;
+    .dock-tooltip {
+        font-size: 0.6875rem;
+        padding: 6px 10px;
+        border-radius: 10px;
     }
 }
 

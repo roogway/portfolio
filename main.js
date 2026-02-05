@@ -184,165 +184,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =====================================================
-    // DRAGGABLE STICKERS
+    // STICKER DOCK - Mobile tap toggle for tooltips
     // =====================================================
-    const stickers = document.querySelectorAll('.sticker');
+    const dockStickers = document.querySelectorAll('.dock-sticker');
     
-    stickers.forEach(sticker => {
-        let isDragging = false;
-        let startX, startY;
-        let offsetX = 0, offsetY = 0;
-        
-        // Get initial position from CSS custom properties
-        const computedStyle = getComputedStyle(sticker);
-        let currentX = parseFloat(sticker.style.getPropertyValue('--x')) || 50;
-        let currentY = parseFloat(sticker.style.getPropertyValue('--y')) || 50;
-        
-        // Mouse events
-        sticker.addEventListener('mousedown', (e) => {
-            // Don't start drag if clicking on popover link
-            if (e.target.closest('.sticker-popover a, .popover-cta')) return;
-            
-            isDragging = true;
-            sticker.classList.add('dragging');
-            
-            const rect = sticker.getBoundingClientRect();
-            const parent = sticker.parentElement.getBoundingClientRect();
-            
-            startX = e.clientX;
-            startY = e.clientY;
-            offsetX = rect.left - parent.left;
-            offsetY = rect.top - parent.top;
-            
-            e.preventDefault();
-        });
-        
-        document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            
-            const parent = sticker.parentElement.getBoundingClientRect();
-            const dx = e.clientX - startX;
-            const dy = e.clientY - startY;
-            
-            const newX = ((offsetX + dx) / parent.width) * 100;
-            const newY = ((offsetY + dy) / parent.height) * 100;
-            
-            sticker.style.setProperty('--x', `${Math.max(0, Math.min(95, newX))}%`);
-            sticker.style.setProperty('--y', `${Math.max(0, Math.min(95, newY))}%`);
-        });
-        
-        document.addEventListener('mouseup', () => {
-            if (isDragging) {
-                isDragging = false;
-                sticker.classList.remove('dragging');
-            }
-        });
-        
-        // Touch events for mobile
-        sticker.addEventListener('touchstart', (e) => {
-            if (e.target.closest('.sticker-popover a, .popover-cta')) return;
-            
-            isDragging = true;
-            sticker.classList.add('dragging');
-            
-            const touch = e.touches[0];
-            const rect = sticker.getBoundingClientRect();
-            const parent = sticker.parentElement.getBoundingClientRect();
-            
-            startX = touch.clientX;
-            startY = touch.clientY;
-            offsetX = rect.left - parent.left;
-            offsetY = rect.top - parent.top;
-        }, { passive: true });
-        
-        document.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            
-            const touch = e.touches[0];
-            const parent = sticker.parentElement.getBoundingClientRect();
-            const dx = touch.clientX - startX;
-            const dy = touch.clientY - startY;
-            
-            const newX = ((offsetX + dx) / parent.width) * 100;
-            const newY = ((offsetY + dy) / parent.height) * 100;
-            
-            sticker.style.setProperty('--x', `${Math.max(0, Math.min(95, newX))}%`);
-            sticker.style.setProperty('--y', `${Math.max(0, Math.min(95, newY))}%`);
-        }, { passive: true });
-        
-        document.addEventListener('touchend', () => {
-            if (isDragging) {
-                isDragging = false;
-                sticker.classList.remove('dragging');
-            }
-        });
-    });
-    
-    // =====================================================
-    // MOBILE POPOVER TOGGLE
-    // =====================================================
-    // On touch devices, tap toggles popover instead of hover
-    if ('ontouchstart' in window) {
-        stickers.forEach(sticker => {
+    if ('ontouchstart' in window && dockStickers.length > 0) {
+        dockStickers.forEach(sticker => {
             sticker.addEventListener('click', (e) => {
                 // Don't toggle if clicking a link
-                if (e.target.closest('a, .popover-cta-modal')) return;
+                if (e.target.closest('a')) return;
                 
-                // Close other popovers
-                stickers.forEach(s => {
+                // Close other tooltips
+                dockStickers.forEach(s => {
                     if (s !== sticker) s.classList.remove('active');
                 });
                 
-                // Toggle this popover
+                // Toggle this tooltip
                 sticker.classList.toggle('active');
             });
         });
         
-        // Close popovers when clicking outside
+        // Close tooltips when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.sticker')) {
-                stickers.forEach(s => s.classList.remove('active'));
-            }
-        });
-    }
-    
-    // =====================================================
-    // NOTEBOOK MODAL
-    // =====================================================
-    const notebookSticker = document.querySelector('.sticker-notebook');
-    const notebookModal = document.getElementById('notebook-modal');
-    const notebookClose = document.querySelector('.notebook-close');
-    
-    if (notebookSticker && notebookModal) {
-        // Open modal when clicking the notebook sticker's CTA
-        notebookSticker.addEventListener('click', (e) => {
-            if (e.target.closest('.popover-cta-modal')) {
-                notebookModal.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-        
-        // Close modal
-        const closeModal = () => {
-            notebookModal.classList.remove('open');
-            document.body.style.overflow = '';
-        };
-        
-        if (notebookClose) {
-            notebookClose.addEventListener('click', closeModal);
-        }
-        
-        // Close on backdrop click
-        notebookModal.addEventListener('click', (e) => {
-            if (e.target === notebookModal) {
-                closeModal();
-            }
-        });
-        
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && notebookModal.classList.contains('open')) {
-                closeModal();
+            if (!e.target.closest('.dock-sticker')) {
+                dockStickers.forEach(s => s.classList.remove('active'));
             }
         });
     }
