@@ -140,6 +140,31 @@ img {
     font-weight: 400;
     color: var(--color-text);
     transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.15em;
+}
+
+/* Homepage nav - light text over dark hero */
+.nav:not(.scrolled) .nav-logo,
+.nav:not(.scrolled) .nav-link {
+    color: rgba(232, 221, 212, 0.9);
+}
+
+.nav:not(.scrolled) .nav-link:hover {
+    color: #E8DDD4;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav:not(.scrolled) .nav-cta {
+    background: rgba(255, 255, 255, 0.15);
+    color: #E8DDD4;
+    border-color: rgba(232, 221, 212, 0.5);
+}
+
+.nav:not(.scrolled) .nav-cta:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
 }
 
 .nav-logo:hover {
@@ -228,6 +253,7 @@ img {
     margin-bottom: var(--space-md);
     animation: fadeUp 0.8s ease forwards;
     opacity: 0;
+    color: #E8DDD4; /* Warm cream for dark bg */
 }
 
 .hero-meta {
@@ -238,13 +264,15 @@ img {
 .hero-title {
     font-size: 1.25rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: rgba(232, 221, 212, 0.9); /* Light cream for dark bg */
     margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
 
 .hero-subtitle {
     font-size: 1.125rem;
-    color: var(--color-text-secondary);
+    color: rgba(232, 221, 212, 0.7); /* Slightly dimmer cream */
 }
 
 .hero-cta {
@@ -283,29 +311,37 @@ img {
     overflow: hidden;
     z-index: 1;
     
-    /* Premium gradient - soft overlapping blobs like Leonard Agency */
+    /* Dark purple/blue gradient like reference */
     background: 
-        /* Warm orange/coral blob - top right */
-        radial-gradient(ellipse 60% 50% at 85% 20%, 
-            rgba(255, 120, 80, 0.5) 0%, 
-            rgba(255, 150, 100, 0.3) 40%,
+        /* Purple glow - top left */
+        radial-gradient(ellipse 80% 60% at 10% 20%, 
+            rgba(120, 60, 150, 0.8) 0%, 
+            rgba(80, 40, 120, 0.4) 40%,
             transparent 70%),
-        /* Soft pink blob - center */
-        radial-gradient(ellipse 70% 60% at 50% 50%, 
-            rgba(255, 180, 200, 0.35) 0%, 
-            rgba(255, 200, 210, 0.2) 50%,
-            transparent 80%),
-        /* Cool blue-gray blob - left */
-        radial-gradient(ellipse 50% 70% at 15% 60%, 
-            rgba(180, 190, 220, 0.4) 0%, 
-            rgba(200, 210, 230, 0.2) 50%,
+        /* Deep blue base - center right */
+        radial-gradient(ellipse 100% 80% at 70% 60%, 
+            rgba(30, 50, 80, 0.9) 0%, 
+            rgba(20, 35, 60, 0.6) 50%,
+            transparent 90%),
+        /* Teal accent - bottom */
+        radial-gradient(ellipse 60% 40% at 50% 100%, 
+            rgba(40, 80, 100, 0.5) 0%, 
             transparent 70%),
-        /* Subtle lavender blob - bottom */
-        radial-gradient(ellipse 80% 40% at 60% 90%, 
-            rgba(220, 200, 240, 0.25) 0%, 
-            transparent 60%),
-        /* Base cream */
-        #FAF7F5;
+        /* Base dark blue */
+        #1a1a2e;
+}
+
+/* Grid overlay */
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
 }
 
 /* =====================================================
@@ -552,6 +588,12 @@ img {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: var(--space-2xl) var(--space-lg);
+}
+
+/* Value props on about page */
+.about-values {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
 }
 
 .value-card {
@@ -2470,12 +2512,13 @@ img {
     /* Adjust gradient for mobile - more centered */
     .hero-visual {
         background: 
-            radial-gradient(ellipse 120% 80% at 50% 30%, 
-                rgba(255, 140, 100, 0.45) 0%, 
-                rgba(255, 180, 200, 0.35) 35%,
-                rgba(200, 210, 230, 0.25) 60%,
-                transparent 100%),
-            #FAF7F5;
+            radial-gradient(ellipse 100% 60% at 20% 30%, 
+                rgba(120, 60, 150, 0.7) 0%, 
+                transparent 60%),
+            radial-gradient(ellipse 80% 60% at 80% 70%, 
+                rgba(30, 50, 80, 0.8) 0%, 
+                transparent 70%),
+            #1a1a2e;
     }
     
     /* Marquee - smaller text on mobile */
