@@ -340,45 +340,51 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     pointer-events: none;
     overflow: hidden;
     z-index: 1;
-    
-    /* Use exported Figma background */
+}
+
+/* Background image as pseudo-element so blobs can layer on top */
+.hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background: url('images/hero-bg.png') center center / cover no-repeat;
-    background-color: #1a1a2e; /* fallback */
+    background-color: #1a1a2e;
+    z-index: 0;
 }
 
 /* Animated gradient blobs */
 .hero-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.5;
+    filter: blur(60px);
     pointer-events: none;
+    z-index: 2;
 }
 
 .hero-blob-1 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(140, 80, 180, 0.6) 0%, transparent 70%);
-    top: 5%;
-    left: 5%;
+    width: 500px;
+    height: 500px;
+    background: rgba(140, 80, 180, 0.35);
+    top: -10%;
+    left: -5%;
     animation: blobFloat1 20s ease-in-out infinite;
 }
 
 .hero-blob-2 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(60, 100, 160, 0.5) 0%, transparent 70%);
-    top: 40%;
-    right: 10%;
+    width: 450px;
+    height: 450px;
+    background: rgba(60, 100, 160, 0.3);
+    top: 30%;
+    right: -5%;
     animation: blobFloat2 25s ease-in-out infinite;
 }
 
 .hero-blob-3 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(80, 140, 150, 0.4) 0%, transparent 70%);
-    bottom: 10%;
-    left: 30%;
+    width: 400px;
+    height: 400px;
+    background: rgba(80, 140, 150, 0.25);
+    bottom: -5%;
+    left: 20%;
     animation: blobFloat3 22s ease-in-out infinite;
 }
 
@@ -449,6 +455,7 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 80%),
         linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
     -webkit-mask-composite: source-in;
+    z-index: 3;
     mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
 }
