@@ -414,7 +414,7 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 /* Tooltip */
 .dock-tooltip {
     position: absolute;
-    bottom: calc(100% + 16px);
+    bottom: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
     background: white;
@@ -432,6 +432,26 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     pointer-events: none;
     transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
     z-index: 100;
+}
+
+/* Invisible bridge to maintain hover when moving to tooltip */
+.dock-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background: transparent;
+}
+
+/* Allow pointer events on tooltip when visible */
+.dock-sticker:hover .dock-tooltip,
+.dock-tooltip:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 /* Tooltip tail */
@@ -1153,6 +1173,7 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     object-fit: contain;
     display: block;
     margin-bottom: var(--space-sm);
+    filter: brightness(0.3);
 }
 
 .footer-brand p {
