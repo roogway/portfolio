@@ -212,6 +212,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // =====================================================
+    // CONTACT MODAL
+    // =====================================================
+    const contactBtn = document.getElementById('contact-btn');
+    const contactModal = document.getElementById('contact-modal');
+    const contactClose = document.querySelector('.contact-modal-close');
+    const copyBtn = document.querySelector('.contact-copy-btn');
+    
+    if (contactBtn && contactModal) {
+        // Open modal
+        contactBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            contactModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close modal - X button
+        if (contactClose) {
+            contactClose.addEventListener('click', () => {
+                contactModal.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        }
+        
+        // Close modal - click outside
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                contactModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close modal - Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactModal.classList.contains('open')) {
+                contactModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    
+    // Copy email functionality
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+            const email = copyBtn.dataset.email;
+            try {
+                await navigator.clipboard.writeText(email);
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = email;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }
+        });
+    }
+
     // Console greeting
     console.log('%c👋 Hey there!', 'font-size: 24px; font-weight: bold;');
     console.log('%cThanks for checking out my portfolio code.', 'font-size: 14px;');

@@ -149,6 +149,18 @@ img {
     width: 32px;
     height: 32px;
     object-fit: contain;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Bigger logo on homepage hero (before scroll) */
+body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Darken logo when scrolled to white section */
+.nav.scrolled .nav-logo-img {
+    filter: brightness(0.3);
 }
 
 /* Homepage nav - light text over dark hero */
@@ -205,6 +217,8 @@ img {
     background: var(--color-text);
     padding: 0.625rem 1.25rem;
     border-radius: 100px;
+    border: 1px solid transparent;
+    cursor: pointer;
     transition: all var(--transition-base);
 }
 
@@ -1129,6 +1143,14 @@ img {
 .footer-logo {
     font-family: var(--font-display);
     font-size: 2rem;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.footer-logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
     display: block;
     margin-bottom: var(--space-sm);
 }
@@ -2982,4 +3004,142 @@ video, img {
     .career-description {
         font-size: 0.9375rem;
     }
+}
+
+/* =====================================================
+   CONTACT MODAL
+   ===================================================== */
+.contact-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.contact-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contact-modal-content {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.2s ease;
+}
+
+.contact-modal.open .contact-modal-content {
+    transform: translateY(0);
+}
+
+.contact-modal-close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.contact-modal-close:hover {
+    background: var(--color-bg);
+}
+
+.contact-modal h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+}
+
+.contact-modal-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-lg);
+}
+
+.contact-modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.contact-email-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.contact-email {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.contact-copy-btn {
+    background: var(--color-text);
+    color: white;
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.contact-copy-btn:hover {
+    background: var(--color-text-secondary);
+}
+
+.contact-copy-btn.copied {
+    background: #22c55e;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.contact-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+}
+
+.contact-link-btn:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
 }
