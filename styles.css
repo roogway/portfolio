@@ -278,10 +278,11 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 
 /* Exported name image with texture */
 .hero-name-img {
+    display: block;
     max-width: 90%;
     width: clamp(280px, 60vw, 700px);
     height: auto;
-    margin-bottom: var(--space-md);
+    margin: 0 auto var(--space-md) auto;
     animation: nameReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     opacity: 0;
 }
