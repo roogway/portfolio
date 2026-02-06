@@ -410,13 +410,13 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         transform: translate(0, 0) scale(1);
     }
     25% {
-        transform: translate(60px, 40px) scale(1.1);
+        transform: translate(100px, 60px) scale(1.2);
     }
     50% {
-        transform: translate(20px, 80px) scale(0.9);
+        transform: translate(40px, 120px) scale(0.8);
     }
     75% {
-        transform: translate(-40px, 30px) scale(1.05);
+        transform: translate(-70px, 50px) scale(1.15);
     }
 }
 
@@ -425,10 +425,10 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         transform: translate(0, 0) scale(1);
     }
     33% {
-        transform: translate(-50px, 60px) scale(1.15);
+        transform: translate(-80px, 100px) scale(1.25);
     }
     66% {
-        transform: translate(40px, -40px) scale(0.85);
+        transform: translate(70px, -60px) scale(0.75);
     }
 }
 
@@ -437,45 +437,20 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         transform: translate(0, 0) scale(1);
     }
     20% {
-        transform: translate(80px, -20px) scale(1.08);
+        transform: translate(120px, -30px) scale(1.15);
     }
     40% {
-        transform: translate(50px, 50px) scale(0.92);
+        transform: translate(80px, 80px) scale(0.85);
     }
     60% {
-        transform: translate(-30px, 70px) scale(1.1);
+        transform: translate(-50px, 110px) scale(1.2);
     }
     80% {
-        transform: translate(-60px, 20px) scale(0.95);
+        transform: translate(-100px, 40px) scale(0.9);
     }
 }
 
-/* Perspective grid overlay */
-.hero-visual::before {
-    content: '';
-    position: absolute;
-    left: -50%;
-    right: -50%;
-    bottom: 0;
-    height: 70%;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 50px 50px;
-    transform-origin: center bottom;
-    transform: perspective(400px) rotateX(65deg);
-    mask-image: 
-        linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 80%),
-        linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-image: 
-        linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 80%),
-        linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    z-index: 3;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 70%);
-}
+/* Grid overlay removed - using grid from hero-bg.png instead */
 
 /* =====================================================
    STICKER DOCK - Horizontal row at bottom of hero
@@ -632,16 +607,15 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 
 @media (max-width: 480px) {
     .sticker-dock {
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        max-width: 280px;
+        gap: 0.25rem;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
     }
     
     .dock-sticker img {
-        width: 42px;
-        height: 42px;
+        width: 36px;
+        height: 36px;
     }
     
     .dock-tooltip {
@@ -1864,10 +1838,33 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 }
 
 .gallery-item figcaption {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
     margin-top: var(--space-sm);
     text-align: center;
+}
+
+/* Project Section - for organized image galleries with titles */
+.project-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+}
+
+.project-section .gallery-item {
+    margin-bottom: var(--space-lg);
+}
+
+.project-section .gallery-item:last-child {
+    margin-bottom: 0;
 }
 
 /* 6. Links / CTA Section - Light Background */
@@ -2362,17 +2359,15 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     padding: 0 var(--space-lg) var(--space-2xl);
 }
 
-/* CSS Columns for true masonry/collage effect */
+/* Simple 2x2 grid layout */
 .masonry-grid {
-    column-count: 2;
-    column-gap: var(--space-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
 }
 
 .masonry-item {
-    margin: 0 0 var(--space-md) 0;
-    break-inside: avoid;
-    display: inline-block;
-    width: 100%;
+    margin: 0;
 }
 
 /* Let images use their natural aspect ratio */
@@ -2389,8 +2384,8 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 }
 
 .masonry-item figcaption {
-    font-size: 0.8125rem;
-    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
     margin-top: var(--space-xs);
     padding: 0 var(--space-xs);
     line-height: 1.5;
@@ -2407,7 +2402,7 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     }
 
     .masonry-grid {
-        column-count: 1;
+        grid-template-columns: 1fr;
     }
 }
 /* =====================================================
@@ -2532,6 +2527,7 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
         direction: ltr;
+        margin-bottom: var(--space-2xl);
     }
 
     .workflow-phone,
@@ -2542,6 +2538,10 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     .workflow-text {
         order: 2;
         padding: 0;
+    }
+    
+    .workflow-text h3 {
+        margin-top: var(--space-sm);
     }
 
     .phone-frame {
@@ -2559,6 +2559,15 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     .phone-frame video,
     .phone-frame img {
         border-radius: 22px;
+    }
+    
+    /* Better heading-image association on mobile */
+    .gallery-item {
+        margin-bottom: var(--space-2xl);
+    }
+    
+    .gallery-item figcaption {
+        margin-bottom: var(--space-lg);
     }
 }
 /* =====================================================
@@ -2650,9 +2659,9 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 @media (max-width: 768px) {
     /* Hero adjustments */
     .hero {
-        min-height: 85vh;
+        min-height: 70vh;
         padding-top: calc(var(--nav-height) + var(--space-md));
-        padding-bottom: var(--space-lg);
+        padding-bottom: var(--space-md);
     }
     
     .hero-name {
