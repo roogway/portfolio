@@ -2448,6 +2448,34 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         grid-template-columns: 1fr;
     }
 }
+
+/* =====================================================
+   EMBEDDED VIDEO CONTAINER (YouTube, etc.)
+   ===================================================== */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-bottom: var(--space-md);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.video-caption {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: var(--space-sm);
+}
+
 /* =====================================================
    WORKFLOW VIDEOS - Prototype Demo Section
    ===================================================== */
