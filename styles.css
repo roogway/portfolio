@@ -3125,6 +3125,48 @@ video, img {
     margin: 0;
 }
 
+/* Tools Section */
+.tools-section {
+    margin-bottom: var(--space-2xl);
+}
+
+.tools-heading {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+}
+
+.tools-category h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.tools-category p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
 /* Contact Section */
 .about-contact {
     margin-bottom: var(--space-xl);
