@@ -2827,6 +2827,21 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         text-align: center;
     }
     
+    /* Center footer logo on mobile */
+    .footer-logo-img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Larger touch targets for footer links */
+    .footer-col a {
+        padding: 0.5rem 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     /* CTA section */
     .cta {
         padding: var(--space-xl) var(--space-md);
@@ -2973,7 +2988,8 @@ video, img {
     .nav-link,
     .project-card,
     .explore-item {
-        min-height: 44px;
+        min-height: 56px;
+        padding: var(--space-md) var(--space-sm);
     }
     
     .tag {
@@ -3244,6 +3260,16 @@ video, img {
     .career-date {
         font-size: 0.8125rem;
         padding-top: 0;
+        margin-bottom: var(--space-xs);
+    }
+    
+    /* Tools section mobile */
+    .tools-section {
+        margin-bottom: var(--space-xl);
+    }
+    
+    .tools-heading {
+        margin-bottom: var(--space-md);
     }
 
     .career-title {
