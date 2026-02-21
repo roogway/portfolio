@@ -2013,9 +2013,14 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 .work-card-image {
     aspect-ratio: 16/10;
     overflow: hidden;
+    position: relative;
 }
 
-.work-card-image img {
+.work-card-image img,
+.work-card-image video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -2719,9 +2724,12 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 
 /* Tablet and below */
 @media (max-width: 1024px) {
-    /* Ensure videos maintain aspect ratio */
+    /* Ensure videos fill container properly */
     .project-image video,
     .work-card-image video {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -3150,11 +3158,7 @@ video, img {
 
 .speaking-venue {
     font-size: 0.875rem;
-    color: var(--color-text);
-    font-weight: 600;
-    background: var(--color-bg-alt);
-    padding: 0.25rem 0.75rem;
-    border-radius: var(--radius-full);
+    color: var(--color-text-muted);
 }
 
 /* Career Section */
@@ -3351,7 +3355,6 @@ video, img {
     .speaking-venue {
         grid-column: 2;
         font-size: 0.75rem;
-        justify-self: start;
     }
     
     /* Tools section mobile */
