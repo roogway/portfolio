@@ -24,7 +24,7 @@
 
     --aqua-primary: #00C9B7;
     --aqua-secondary: #E8FBF9;
-    --aqua-gradient: linear-gradient(135deg, #E8FBF9 0%, #D4F5F2 50%, #A8EBE5 100%);
+    --aqua-gradient: linear-gradient(135deg, #D4F5F2 0%, #C2F0EC 50%, #A8EBE5 100%);
 
     --express-primary: #FF2BC2;
     --express-secondary: #FFE8F7;
@@ -1387,6 +1387,8 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     
     .project-featured .project-image {
         min-height: 280px;
+        width: 100%;
+        flex: none;
     }
     
     .project-featured .project-info {
@@ -2806,11 +2808,6 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         border-radius: var(--radius-lg);
     }
     
-    /* Featured card - add internal padding on mobile */
-    .project-card.project-featured {
-        padding: var(--space-md);
-        padding-bottom: 0;
-    }
     
     .project-image {
         aspect-ratio: 16/10;
