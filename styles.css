@@ -3239,11 +3239,11 @@ video, img {
 
 .tools-heading {
     font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.8125rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-secondary);
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
     margin-bottom: var(--space-lg);
 }
 
