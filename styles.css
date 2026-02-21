@@ -3367,7 +3367,7 @@ video, img {
     
     /* Tools section mobile */
     .tools-section {
-        margin-bottom: var(--space-xl);
+        margin-bottom: var(--space-2xl);
     }
     
     .tools-heading {
