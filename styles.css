@@ -2795,6 +2795,14 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         min-height: 200px;
     }
     
+    /* Featured project card - add padding around image */
+    .project-featured .project-image {
+        margin: var(--space-md);
+        margin-bottom: 0;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+    }
+    
     .project-info {
         padding: var(--space-md);
     }
@@ -2810,21 +2818,26 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     /* Footer - stack columns on mobile */
     .footer-content {
         flex-direction: column;
-        gap: var(--space-lg);
+        gap: var(--space-sm);
         text-align: center;
     }
     
     .footer-brand {
         max-width: 100%;
+        margin-bottom: var(--space-xs);
     }
     
     .footer-links {
         justify-content: center;
-        gap: var(--space-xl);
+        gap: var(--space-lg);
     }
     
     .footer-col {
         text-align: center;
+    }
+    
+    .footer-col h5 {
+        margin-bottom: var(--space-sm);
     }
     
     /* Center footer logo on mobile */
@@ -3078,6 +3091,58 @@ video, img {
     margin-bottom: 0;
 }
 
+/* Speaking Section */
+.speaking-section {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.speaking-heading {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.speaking-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.speaking-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: var(--space-md);
+    align-items: baseline;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.speaking-item:last-child {
+    border-bottom: none;
+}
+
+.speaking-year {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.speaking-title {
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.speaking-venue {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
 /* Career Section */
 .career-section {
     margin-bottom: var(--space-2xl);
@@ -3261,6 +3326,17 @@ video, img {
         font-size: 0.8125rem;
         padding-top: 0;
         margin-bottom: var(--space-xs);
+    }
+    
+    /* Speaking section mobile */
+    .speaking-item {
+        grid-template-columns: 50px 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .speaking-venue {
+        grid-column: 2;
+        font-size: 0.8125rem;
     }
     
     /* Tools section mobile */

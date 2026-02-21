@@ -12,6 +12,31 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('nav-open');
             navToggle.classList.toggle('nav-toggle-active');
         });
+        
+        // Handle nav link clicks - only one active at a time
+        const navLinkElements = navLinks.querySelectorAll('.nav-link');
+        navLinkElements.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const isExternal = link.getAttribute('target') === '_blank' || 
+                                   link.href.startsWith('http') && !link.href.includes(window.location.hostname);
+                
+                // External links (Resume, LinkedIn) should never have active state
+                if (isExternal) {
+                    // Don't add active class, just close the menu
+                    navLinks.classList.remove('nav-open');
+                    navToggle.classList.remove('nav-toggle-active');
+                    return;
+                }
+                
+                // Internal links - update active state
+                navLinkElements.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Close mobile menu after clicking
+                navLinks.classList.remove('nav-open');
+                navToggle.classList.remove('nav-toggle-active');
+            });
+        });
     }
 
     // Nav scroll effect - transparent at top, white when scrolled
@@ -211,6 +236,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // =====================================================
+    // LINKEDIN DEEP LINK - Open app on mobile if installed
+    // =====================================================
+    const linkedinLinks = document.querySelectorAll('a[href*="linkedin.com/in/"]');
+    
+    linkedinLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Only apply deep linking on mobile/touch devices
+            if (!('ontouchstart' in window)) return;
+            
+            e.preventDefault();
+            
+            const profileId = 'raghvikabra';
+            const appUrl = `linkedin://in/${profileId}`;
+            const webUrl = link.href;
+            
+            // Try to open the app
+            const start = Date.now();
+            window.location.href = appUrl;
+            
+            // Fallback to web if app doesn't open within 1.5 seconds
+            setTimeout(() => {
+                // If we're still here and not much time has passed, app didn't open
+                if (Date.now() - start < 2000) {
+                    window.open(webUrl, '_blank');
+                }
+            }, 1500);
+        });
+    });
 
     // =====================================================
     // CONTACT MODAL
