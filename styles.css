@@ -828,15 +828,14 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
 
 .project-image {
     aspect-ratio: 4/3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     position: relative;
     overflow: hidden;
 }
 /* NEW: Project card hero images */
 .project-image img,
 .project-image video {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -2785,6 +2784,12 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
         font-size: 0.875rem;
     }
     
+    /* Work section - consistent padding on mobile */
+    .work {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+    
     /* Project cards - better mobile layout */
     .project-card {
         border-radius: var(--radius-lg);
@@ -2793,12 +2798,6 @@ body:not(.scrolled-page) .nav:not(.scrolled) .nav-logo-img {
     .project-image {
         aspect-ratio: 16/10;
         min-height: 200px;
-    }
-    
-    /* Featured project card - consistent spacing with other cards */
-    .project-featured .project-image {
-        margin: var(--space-md);
-        margin-bottom: 0;
     }
     
     .project-info {
