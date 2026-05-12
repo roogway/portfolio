@@ -15,7 +15,7 @@
     <nav class="nav">
         <a href="index.html" class="nav-logo"><img src="images/favicon.png" alt="R" class="nav-logo-img"></a>
         <div class="nav-links">
-            <a href="index.html#work" class="nav-link">Work</a>
+            <a href="index.html" class="nav-link">Work</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="https://drive.google.com/file/d/10F2ZvqQ5ZKpHq7CtwfJkQ-9E1nQkX-Gl/view?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
             <a href="https://www.linkedin.com/in/raghvikabra" class="nav-link" target="_blank">LinkedIn</a>
@@ -28,18 +28,18 @@
 
     <!-- 1. HERO -->
     <section class="project-hero">
-        <div class="project-hero-content">
+        <div class="project-hero-content project-hero-aligned">
             <div class="project-hero-left">
                 <h1 class="project-title">Pigeon Post</h1>
-                <p class="project-tagline">Send tiny pixel gifts to your friends via carrier pigeon. A small, delightful ritual.</p>
+                <p class="project-tagline">We've optimized the joy out of communication. It's so efficient now that it barely feels like communication anymore. Messages are instant. Replies are auto-completed. So I built something deliberately slow and silly: a pigeon that delivers your message with zero urgency.</p>
                 <div class="project-meta">
                     <div class="meta-item">
                         <span class="meta-label">Role</span>
-                        <span class="meta-value">Designer & Developer</span>
+                        <span class="meta-value">Creator & Designer</span>
                     </div>
                     <div class="meta-item">
-                        <span class="meta-label">Company</span>
-                        <span class="meta-value">Personal Project</span>
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value">Side Project</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">Year</span>
@@ -47,74 +47,140 @@
                     </div>
                 </div>
             </div>
-            <div class="project-hero-image-container">
-                <video autoplay loop muted playsinline>
-                    <source src="https://raghvikabra.com/images/pigeon-hero.mp4" type="video/mp4">
-                </video>
-                <a href="https://pigeonpost.fun" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">Send a Pigeon →</a>
+            <div class="project-hero-image-container project-hero-image-top">
+                <img src="images/pigeon-hero.jpg" alt="Pigeon Post - Digital postcards and letters">
+                <a href="https://pigeonpost.fun" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">Try Pigeon Post →</a>
             </div>
         </div>
     </section>
 
-    
-    <!-- 2. STATS BAR -->
-    <section class="project-stats">
-        
-        <div class="stat">
-            <span class="stat-number">5k+</span>
-            <span class="stat-label">Pigeons Sent</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">12</span>
-            <span class="stat-label">Pixel Gifts</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">∞</span>
-            <span class="stat-label">Smiles Delivered</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">1</span>
-            <span class="stat-label">Side Project</span>
-        </div>
-    </section>
-
-    
-    <!-- 3. KEY DECISIONS -->
+    <!-- 2. KEY DECISIONS (No heading, like other projects) -->
     <section class="project-decisions">
         <div class="decisions-grid">
-            
             <div class="decision-item">
-                <h3>Deliberately Slow</h3>
-                <p>In a world of instant messaging</p>
+                <h3>No Read Receipts</h3>
+                <p>The recipient doesn't know it's coming. You pick when it arrives. They wait, then unwrap. That's the whole point.</p>
             </div>
             <div class="decision-item">
-                <h3>Pixel Art Aesthetic</h3>
-                <p>Nostalgic</p>
+                <h3>Just a Link</h3>
+                <p>No app to download. No account to create. Send a URL over text, email, wherever. They tap, they smile.</p>
             </div>
             <div class="decision-item">
-                <h3>No Account Required</h3>
-                <p>Just pick a gift</p>
-            </div>
-            <div class="decision-item">
-                <h3>Collectible Messages</h3>
-                <p>All your received messages live in one cozy place.</p>
+                <h3>Weekend Project</h3>
+                <p>Built solo with Claude and Cursor. Designed in Figma. Shipped in a few days because the idea was small enough to finish.</p>
             </div>
         </div>
     </section>
 
-    <!-- Add custom content sections here -->
+    <!-- 3. DEMO VIDEO (Centered) -->
+    <section class="demo-video-section">
+        <h2 class="demo-title">See the magic!</h2>
+        <div class="demo-video-container">
+            <div class="browser-frame">
+                <div class="browser-chrome">
+                    <div class="browser-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="browser-content">
+                    <video autoplay muted loop controls playsinline>
+                        <source src="images/pigeon-demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    
+    <!-- 4. FOUR SCREENS - 2x2 Grid -->
+    <section class="pigeon-screens">
+        <div class="pigeon-screens-grid-2x2">
+            <div class="pigeon-screen-item">
+                <div class="browser-frame">
+                    <div class="browser-chrome">
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <img src="images/pigeon-screen-1.jpg" alt="Pick a cute pixel art gift">
+                    </div>
+                </div>
+                <p class="pigeon-screen-label">Pick a cute pixel art gift and write a message</p>
+            </div>
+            <div class="pigeon-screen-item">
+                <div class="browser-frame">
+                    <div class="browser-chrome">
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <img src="images/pigeon-screen-2.jpg" alt="Share the magic link">
+                    </div>
+                </div>
+                <p class="pigeon-screen-label">Share the magic link</p>
+            </div>
+            <div class="pigeon-screen-item">
+                <div class="browser-frame">
+                    <div class="browser-chrome">
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <img src="images/pigeon-screen-3.jpg" alt="Your friend unwraps the surprise">
+                    </div>
+                </div>
+                <p class="pigeon-screen-label">The pigeon delivers your message</p>
+            </div>
+            <div class="pigeon-screen-item">
+                <div class="browser-frame">
+                    <div class="browser-chrome">
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <img src="images/pigeon-screen-4.jpg" alt="Collect cards on your wall">
+                    </div>
+                </div>
+                <p class="pigeon-screen-label">Collect all your messages in one place</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- MORE WORK -->
+    <!-- 5. TRY IT LINK -->
+    <section class="explore-links">
+        <h2 class="explore-title">Try It Yourself</h2>
+
+        <a class="explore-item" href="https://pigeonpost.fun" target="_blank">
+            <span class="explore-dot"></span>
+            <div class="explore-text">
+                <h3>Pigeon Post</h3>
+                <p>Send one now</p>
+            </div>
+            <span class="explore-arrow">→</span>
+        </a>
+    </section>
+
+    <!-- 6. MORE WORK -->
     <section class="more-work">
         <h2 class="more-work-title">More Work</h2>
         <div class="more-work-grid">
-            
             <a href="project-aqua.html" class="work-card">
-                <div class="work-card-image">
+                <div class="work-card-image aqua-bg">
                     <video autoplay loop muted playsinline>
-                        <source src="https://raghvikabra.com/images/aqua-hero.mp4" type="video/mp4">
+                        <source src="images/aqua-hero.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="work-card-info">
@@ -123,12 +189,12 @@
                 </div>
             </a>
             <a href="adobe-express.html" class="work-card">
-                <div class="work-card-image">
-                    <img src="https://raghvikabra.com/images/express-hero.jpg" alt="Auto-Translate">
+                <div class="work-card-image express-bg">
+                    <img src="images/express-hero.jpg" alt="Auto-Translate">
                 </div>
                 <div class="work-card-info">
                     <h3>Auto-Translate</h3>
-                    <p>Product Designer · Adobe</p>
+                    <p>Adobe Express</p>
                 </div>
             </a>
         </div>
