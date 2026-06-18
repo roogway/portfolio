@@ -6,11 +6,266 @@
     <title>Raghvi Kabra — Emerging Tech at Adobe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&family=Stack+Sans+Notch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/geist@5.1.1/index.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <style>
+        @property --fill {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+        }
+
+        body {
+            font-family: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── ABOVE-FOLD RESET ── */
+        .above-fold {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+            min-height: unset;
+            overflow: visible;
+            position: relative;
+        }
+
+        /* ── BLOBS ── */
+        .blobs {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.2;
+        }
+
+        .blob-1 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, #7c3aed, transparent 70%);
+            top: -150px; left: -100px;
+            animation: blobFloat1 12s ease-in-out infinite;
+        }
+
+        .blob-2 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, #db2777, transparent 70%);
+            top: 20%; right: -100px;
+            animation: blobFloat2 15s ease-in-out infinite;
+        }
+
+        .blob-3 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, #0891b2, transparent 70%);
+            bottom: 10%; left: 30%;
+            animation: blobFloat3 10s ease-in-out infinite;
+        }
+
+        @keyframes blobFloat1 {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(40px,60px) scale(1.1); }
+        }
+        @keyframes blobFloat2 {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(-50px,30px) scale(0.95); }
+        }
+        @keyframes blobFloat3 {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(30px,-40px) scale(1.08); }
+        }
+
+        /* ── STICKERS ── */
+        .stickers {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        /* ── NAME ── */
+        #name {
+            font-family: 'Stack Sans Notch', 'Stack', 'Arial Black', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3.5rem, 9.5vw, 8.5rem);
+            line-height: 1;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            margin-bottom: 1.6rem;
+            cursor: default;
+            user-select: none;
+            overflow: visible;
+        }
+
+        .letter {
+            display: inline-block;
+            padding-bottom: 0.22em;
+            overflow: visible;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .space {
+            display: inline-block;
+            width: 0.28em;
+        }
+
+        /* ── TYPEWRITER ── */
+        .typewriter-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 3rem;
+        }
+
+        #typed-text {
+            font-family: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+            color: rgba(255,255,255,0.82);
+            letter-spacing: 0.01em;
+        }
+
+        #cursor-blink {
+            display: inline-block;
+            width: 2px;
+            height: 1.3em;
+            background: rgba(255,255,255,0.5);
+            vertical-align: middle;
+            margin-left: 3px;
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ── MARQUEE ── */
+        .marquee {
+            background: rgba(255,255,255,0.04);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 1rem 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 28s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-item {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            padding: 0 2rem;
+        }
+
+        .marquee-dot {
+            color: rgba(255,255,255,0.15);
+            padding: 0 0.25rem;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ── CUSTOM CURSOR ── */
+        * { cursor: none !important; }
+
+        .cursor-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 7px; height: 7px;
+            background: #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.2s, transform 0.12s ease;
+            will-change: left, top;
+        }
+
+        .cursor-dot.hovered { transform: translate(-50%, -50%) scale(1.8); }
+
+        .cursor-trail {
+            position: fixed;
+            top: 0; left: 0;
+            border-radius: 50%;
+            background: #ffffff;
+            pointer-events: none;
+            z-index: 9997;
+            transform: translate(-50%, -50%);
+            will-change: left, top, width, height, opacity;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            top: 0; left: 0;
+            width: 38px; height: 38px;
+            border: 1.5px solid rgba(255,255,255,0.45);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9996;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease,
+                        border-color 0.3s ease, background-color 0.3s ease;
+            will-change: left, top;
+        }
+
+        .cursor-ring.hovered {
+            width: 62px; height: 62px;
+            border-color: rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .cursor-ring.clicking {
+            width: 26px; height: 26px;
+            background-color: rgba(255,255,255,0.14);
+        }
+    </style>
 </head>
 <body>
+
+    <div class="cursor-dot"  id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <div class="blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav">
         <a href="index.html" class="nav-logo"><img src="images/favicon.png" alt="R" class="nav-logo-img"></a>
@@ -26,20 +281,10 @@
         </button>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-visual">
-            <!-- Animated gradient blobs -->
-            <div class="hero-blob hero-blob-1"></div>
-            <div class="hero-blob hero-blob-2"></div>
-            <div class="hero-blob hero-blob-3"></div>
-        </div>
-        <div class="hero-content">
-            <img src="images/hero-name.png" alt="Raghvi Kabra" class="hero-name-img">
-            <p class="hero-subtitle">Emerging Tech at Adobe</p>
-            
-            <!-- Sticker Dock -->
-            <div class="sticker-dock">
+    <!-- Above-fold: new hero + marquee pinned to bottom -->
+    <div class="above-fold">
+        <section class="hero">
+            <div class="stickers">
                 <div class="dock-sticker">
                     <img src="images/sticker-pigeon.png" alt="Pigeon Post">
                     <div class="dock-tooltip">
@@ -61,17 +306,17 @@
                     </div>
                 </div>
                 <div class="dock-sticker">
-                    <img src="images/sticker-sf.png" alt="San Francisco">
-                    <div class="dock-tooltip">
-                        <span>Currently based in</span>
-                        <strong>San Francisco</strong>
-                    </div>
-                </div>
-                <div class="dock-sticker">
                     <img src="images/sticker-aqua.png" alt="Project Aqua">
                     <div class="dock-tooltip">
                         <span>Adobe's first app for kids</span>
                         <a href="https://apps.apple.com/us/app/project-aqua-adobe-for-kids/id6751648936" target="_blank">Download Project Aqua</a>
+                    </div>
+                </div>
+                <div class="dock-sticker">
+                    <img src="images/sticker-sf.png" alt="San Francisco">
+                    <div class="dock-tooltip">
+                        <span>Currently based in</span>
+                        <strong>San Francisco</strong>
                     </div>
                 </div>
                 <div class="dock-sticker">
@@ -82,63 +327,35 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Logos/Social Proof -->
-    <section class="logos">
-        <div class="logos-track">
-            <span class="logo-item">Adobe</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Adobe Design Summit Speaker</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">4.8★ App Store</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Carnegie Mellon University</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Featured at Adobe MAX</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">0→1 Design</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Design + Code</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">San Francisco</span>
-            <span class="logo-divider">·</span>
-            <!-- Repeat for smooth infinite scroll -->
-            <span class="logo-item">Adobe</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Adobe Design Summit Speaker</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">4.8★ App Store</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Carnegie Mellon University</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Featured at Adobe MAX</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">0→1 Design</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Design + Code</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">San Francisco</span>
-            <span class="logo-divider">·</span>
-            <!-- Second repeat for extra smooth scroll -->
-            <span class="logo-item">Adobe</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Adobe Design Summit Speaker</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">4.8★ App Store</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Carnegie Mellon University</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Featured at Adobe MAX</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">0→1 Design</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">Design + Code</span>
-            <span class="logo-divider">·</span>
-            <span class="logo-item">San Francisco</span>
+            <h1 id="name">Raghvi Kabra</h1>
+
+            <div class="typewriter-wrap">
+                <span id="typed-text"></span><span id="cursor-blink"></span>
+            </div>
+        </section>
+
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="marquee-item">Adobe</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Adobe Design Summit Speaker</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">4.8★ App Store</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Carnegie Mellon University</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Featured at Adobe MAX</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">0→1 Design</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Design + Code</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">San Francisco</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Adobe</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Adobe Design Summit Speaker</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">4.8★ App Store</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Carnegie Mellon University</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Featured at Adobe MAX</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">0→1 Design</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">Design + Code</span><span class="marquee-dot">·</span>
+                <span class="marquee-item">San Francisco</span><span class="marquee-dot">·</span>
+            </div>
         </div>
-    </section>
+    </div>
 
     <!-- Work Section -->
     <section class="work" id="work">
@@ -291,5 +508,240 @@
     </footer>
 
     <script src="main.js"></script>
+
+    <script>
+        // ── SHARED PALETTE (image colors, sat ×1.3) ──
+        const palette = [
+            [116, 178, 251],   // Airplane View
+            [255, 186, 186],   // Peony Bundle
+            [  0, 145, 120],   // Tropical Rain
+            [209, 200, 242],   // Autumn Lavender
+            [219, 215,  64],   // Limeade
+            [218,  87,  45],   // Tomato Jam
+            [255, 212,  25],   // Pure Sun
+            [139, 145,  51],   // Monet Ponds
+            [255, 147, 198],   // Bubble Gum
+        ];
+
+        function paletteLerp(t) {
+            const s = (((t % 1) + 1) % 1) * (palette.length - 1);
+            const i = Math.floor(s);
+            const f = s - i;
+            const a = palette[i], b = palette[(i + 1) % palette.length];
+            return [
+                Math.round(a[0] + (b[0] - a[0]) * f),
+                Math.round(a[1] + (b[1] - a[1]) * f),
+                Math.round(a[2] + (b[2] - a[2]) * f),
+            ];
+        }
+
+        // ── CUSTOM CURSOR ──
+        const dot  = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+
+        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+
+        const TRAIL_LEN = 18;
+        const trailPts = Array.from({ length: TRAIL_LEN }, () => ({ x: mx, y: my }));
+        const trailEls = trailPts.map(() => {
+            const el = document.createElement('div');
+            el.className = 'cursor-trail';
+            document.body.appendChild(el);
+            return el;
+        });
+
+        let rx = mx, ry = my;
+
+        document.addEventListener('mousemove', e => {
+            mx = e.clientX; my = e.clientY;
+            dot.style.left = mx + 'px';
+            dot.style.top  = my + 'px';
+        });
+
+        document.addEventListener('mousedown', () => ring.classList.add('clicking'));
+        document.addEventListener('mouseup',   () => ring.classList.remove('clicking'));
+        document.addEventListener('mouseleave', () => {
+            dot.style.opacity = '0';
+            ring.style.opacity = '0';
+            trailEls.forEach(el => el.style.opacity = '0');
+        });
+        document.addEventListener('mouseenter', () => {
+            dot.style.opacity = '1';
+            ring.style.opacity = '1';
+        });
+
+        const hoverTargets = 'a, button, .dock-sticker, #name';
+        document.querySelectorAll(hoverTargets).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                ring.classList.add('hovered');
+                dot.classList.add('hovered');
+            });
+            el.addEventListener('mouseleave', () => {
+                ring.classList.remove('hovered');
+                dot.classList.remove('hovered');
+            });
+        });
+
+        (function animate() {
+            const timeOffset = (Date.now() * 0.00008) % 1;
+
+            trailPts.forEach((pt, i) => {
+                const prev = i === 0 ? { x: mx, y: my } : trailPts[i - 1];
+                pt.x += (prev.x - pt.x) * 0.3;
+                pt.y += (prev.y - pt.y) * 0.3;
+
+                const t    = 1 - i / TRAIL_LEN;
+                const size = Math.max(0.8, t * 5.5);
+                const [r, g, b] = paletteLerp(timeOffset + i / TRAIL_LEN);
+
+                const el = trailEls[i];
+                el.style.left       = pt.x + 'px';
+                el.style.top        = pt.y + 'px';
+                el.style.width      = size + 'px';
+                el.style.height     = size + 'px';
+                el.style.opacity    = (t * 0.9).toFixed(3);
+                el.style.background = `rgb(${r},${g},${b})`;
+            });
+
+            const [dr, dg, db] = paletteLerp(timeOffset);
+            dot.style.background   = `rgb(${dr},${dg},${db})`;
+            ring.style.borderColor = `rgba(${dr},${dg},${db},0.4)`;
+
+            rx += (mx - rx) * 0.1;
+            ry += (my - ry) * 0.1;
+            ring.style.left = rx + 'px';
+            ring.style.top  = ry + 'px';
+
+            requestAnimationFrame(animate);
+        })();
+
+        // ── LETTER SPLIT ──
+        const nameEl = document.getElementById('name');
+        nameEl.innerHTML = '';
+        const TEXT = 'Raghvi Kabra';
+        const letterEls = [];
+
+        TEXT.split('').forEach(char => {
+            const span = document.createElement('span');
+            if (char === ' ') {
+                span.className = 'space';
+                span.textContent = char;
+            } else {
+                span.className = 'letter';
+                span.textContent = char;
+                letterEls.push(span);
+            }
+            nameEl.appendChild(span);
+        });
+
+        const letterState = letterEls.map(() => ({ fill: 0, targetFill: 0, angle: 0 }));
+
+        // Unified RAF: lerp fill toward target, set directional gradient per letter
+        (function mainLoop() {
+            const t = (Date.now() * 0.00004) % 1;
+            letterEls.forEach((letter, i) => {
+                const state = letterState[i];
+                state.fill += (state.targetFill - state.fill) * 0.25;
+                const f = state.fill;
+                const [r, g, b] = paletteLerp(t + i / letterEls.length * 0.4);
+                letter.style.backgroundImage = [
+                    `linear-gradient(135deg, rgba(255,255,255,0.22) 0%, transparent 42%, rgba(0,0,0,0.06) 100%)`,
+                    `linear-gradient(${state.angle}deg, rgb(${r},${g},${b}) calc(${f.toFixed(1)}% - 5%), #fff calc(${f.toFixed(1)}% + 5%))`
+                ].join(', ');
+            });
+            requestAnimationFrame(mainLoop);
+        })();
+
+        // ── DISPLACEMENT + DIRECTIONAL FILL ──
+        const stickerEls = Array.from(document.querySelectorAll('.dock-sticker img'));
+
+        document.addEventListener('mousemove', e => {
+            letterEls.forEach((letter, i) => {
+                const rect = letter.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = e.clientX - cx;
+                const dy = e.clientY - cy;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                const radius = 160;
+
+                if (dist < radius) {
+                    const strength = 1 - dist / radius;
+                    const force = strength * 52;
+                    const angle = Math.atan2(dy, dx);
+                    const rot = (e.clientX > cx ? 1 : -1) * strength * 18;
+                    const scale = 1 + strength * 0.12;
+                    letter.style.transform = `translate(${-Math.cos(angle)*force}px, ${-Math.sin(angle)*force}px) rotate(${rot}deg) scale(${scale})`;
+                    letterState[i].targetFill = 110;
+                    letterState[i].angle = (angle * (180 / Math.PI) + 270 + 360) % 360;
+                } else {
+                    letter.style.transform = '';
+                    letterState[i].targetFill = 0;
+                }
+            });
+
+            stickerEls.forEach(sticker => {
+                const rect = sticker.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = e.clientX - cx;
+                const dy = e.clientY - cy;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                const radius = 110;
+
+                if (dist < radius) {
+                    const strength = 1 - dist / radius;
+                    const force = strength * 38;
+                    const angle = Math.atan2(dy, dx);
+                    const rot = (e.clientX > cx ? 1 : -1) * strength * 28;
+                    const scale = 1 + strength * 0.28;
+                    sticker.style.transform = `translate(${-Math.cos(angle)*force}px, ${-Math.sin(angle)*force}px) rotate(${rot}deg) scale(${scale})`;
+                } else {
+                    sticker.style.transform = '';
+                }
+            });
+        });
+
+        document.addEventListener('mouseleave', () => {
+            letterEls.forEach((l, i) => {
+                l.style.transform = '';
+                letterState[i].targetFill = 0;
+            });
+            stickerEls.forEach(s => { s.style.transform = ''; });
+        });
+
+        // ── TYPEWRITER ──
+        const phrases = [
+            'Creative technologist & designer.',
+            'Emerging tech, consumer to enterprise.',
+            'Making complexity feel human.',
+            'Playmaker at Adobe.',
+        ];
+
+        const typedEl = document.getElementById('typed-text');
+        let phraseIdx = 0, charIdx = 0, deleting = false;
+
+        function typewriter() {
+            const phrase = phrases[phraseIdx];
+            if (!deleting) {
+                typedEl.textContent = phrase.slice(0, charIdx + 1);
+                charIdx++;
+                if (charIdx === phrase.length) {
+                    setTimeout(() => { deleting = true; typewriter(); }, 2200);
+                    return;
+                }
+            } else {
+                typedEl.textContent = phrase.slice(0, charIdx - 1);
+                charIdx--;
+                if (charIdx === 0) {
+                    deleting = false;
+                    phraseIdx = (phraseIdx + 1) % phrases.length;
+                }
+            }
+            setTimeout(typewriter, deleting ? 35 : 65);
+        }
+
+        setTimeout(typewriter, 600);
+    </script>
 </body>
 </html>
