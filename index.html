@@ -30,6 +30,7 @@
             flex-direction: column;
             position: relative;
             z-index: 1;
+            background-color: #1a1a2e;
         }
 
         .hero {
@@ -247,6 +248,22 @@
             width: 62px; height: 62px;
             border-color: rgba(255,255,255,0.2);
             background-color: rgba(255,255,255,0.05);
+        }
+
+        .cursor-ring.sticker-hover {
+            width: 50px; height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-color: transparent;
+            background-color: #ffffff;
+        }
+
+        .cursor-ring.sticker-hover::after {
+            content: '↗';
+            font-size: 1.1rem;
+            line-height: 1;
+            color: #1a1a2e;
         }
 
         .cursor-ring.clicking {
@@ -570,7 +587,7 @@
             ring.style.opacity = '1';
         });
 
-        const hoverTargets = 'a, button, .dock-sticker, #name';
+        const hoverTargets = 'a, button, #name';
         document.querySelectorAll(hoverTargets).forEach(el => {
             el.addEventListener('mouseenter', () => {
                 ring.classList.add('hovered');
@@ -579,6 +596,22 @@
             el.addEventListener('mouseleave', () => {
                 ring.classList.remove('hovered');
                 dot.classList.remove('hovered');
+            });
+        });
+
+        let stickerHovered = false;
+
+        document.querySelectorAll('.dock-sticker').forEach(el => {
+            if (!el.querySelector('a')) return;
+            el.addEventListener('mouseenter', () => {
+                ring.classList.add('sticker-hover');
+                dot.style.opacity = '0';
+                stickerHovered = true;
+            });
+            el.addEventListener('mouseleave', () => {
+                ring.classList.remove('sticker-hover');
+                dot.style.opacity = '1';
+                stickerHovered = false;
             });
         });
 
@@ -599,13 +632,13 @@
                 el.style.top        = pt.y + 'px';
                 el.style.width      = size + 'px';
                 el.style.height     = size + 'px';
-                el.style.opacity    = (t * 0.9).toFixed(3);
+                el.style.opacity    = stickerHovered ? 0 : (t * 0.9).toFixed(3);
                 el.style.background = `rgb(${r},${g},${b})`;
             });
 
             const [dr, dg, db] = paletteLerp(timeOffset);
             dot.style.background   = `rgb(${dr},${dg},${db})`;
-            ring.style.borderColor = `rgba(${dr},${dg},${db},0.4)`;
+            ring.style.borderColor = stickerHovered ? 'transparent' : `rgba(${dr},${dg},${db},0.4)`;
 
             rx += (mx - rx) * 0.1;
             ry += (my - ry) * 0.1;
